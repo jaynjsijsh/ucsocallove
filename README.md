@@ -9,22 +9,19 @@
  
 
 
- > ## Expectations
- > * The backend of your project should be implemented in C++. If you wish to choose anoher programming language (e.g. Java, Python), please discuss with your lab TA to obtain permission.
- > * You can incorporate additional technologies/tools but they must be approved (in writing) by the instructor or the TA.
- > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
- > * **Each member of the group must actively participate in the Github Project board, writing unit tests, and reviewing commited code.**
-> * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group. You will need to hold two to three scrum/check-in meetings with your lab TA/reader at different times in addition to the final demo.
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include:
+ > * Project Description:
+ > This project explores the different dating options and stereotypes of the UC’s in Southern California as we create personalities for each of the UC’s. The player (new transfer student) will have the opportunity to choose between multiple text options and depending on the players choice, it can either make the characters like or dislike the player. At the end of the game, the mascot the player matches with the most will be the school they transfer to. 
  > * Why is it important or interesting to you?
+ > As a SoCal UC student, we would like to explore dating opportunities. We want to explore developing a choice based game
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+ > C++ on VSCode, Git and Github
  > * What will be the input/output of your project?
+ > Input and output through the terminal, the player will get different options and they choose based on that
  > * What are the features that the project provides?
- > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
- > 
- > You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
+ > Branching dialogue trees, Inclusion of mood points, Character interactions with input, Labeled Choices, Possible Day/Night cyle and Itemization.
+
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
  > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
