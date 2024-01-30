@@ -4,7 +4,7 @@
 # UC SOCAL LOVE QUEST
  > Your author list below should include links to all members GitHub (remove existing author).
  
- > Authors: \<[Jayne Tan](https://github.com/jaynjsijsh)\>,\<[Ryan Diaz](https://github.com/DBChrono)>,\<[Laura Canon](https://github.com/lscanon)>,\<[Riya Kandalgaonkar](https://github.com/riyak4)>
+ > Authors: [Jayne Tan](https://github.com/jaynjsijsh),[Ryan Diaz](https://github.com/DBChrono),\<[Laura Canon](https://github.com/lscanon)>,\<[Riya Kandalgaonkar](https://github.com/riyak4)>
  >
  
 
