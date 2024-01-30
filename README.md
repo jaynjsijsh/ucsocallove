@@ -1,15 +1,9 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# UC SOCAL LOVE QUEST
- > Your author list below should include links to all members GitHub (remove existing author).
- 
+# UC SOCAL LOVE QUEST 
  > Authors: [Jayne Tan](https://github.com/jaynjsijsh), [Ryan Diaz](https://github.com/DBChrono), [Laura Canon](https://github.com/lscanon), [Riya Kandalgaonkar](https://github.com/riyak4)
- >
  
-
-
-
 ## Project Description
  > * Project Description:
  > This project explores the different dating options and stereotypes of the UC’s in Southern California as we create personalities for each of the UC’s. The player (new transfer student) will have the opportunity to choose between multiple text options and depending on the players choice, it can either make the characters like or dislike the player. At the end of the game, the mascot the player matches with the most will be the school they transfer to. 
