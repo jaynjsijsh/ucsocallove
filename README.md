@@ -14,7 +14,14 @@
  > * What will be the input/output of your project?
  > Input and output through the terminal, the player will get different options and they choose based on that
  > * What are the features that the project provides?
- > Branching dialogue trees, Inclusion of mood points, Character interactions with input, Labeled Choices, Possible Day/Night cyle and Itemization.
+ > Branching dialogue trees: Depending on the player’s option of dialogue, the character’s response will change and reflect the option.
+ > Inclusion of mood points: The mood points will be a numeric value that display the affection character has for the player 
+ > Character interactions with input: The player will get different dialogue options and they choose based on the user pressing assigned keys from the keyboard(i.e. {Dialogue Option 1} (Press “1”),{Dialogue Option 2} (Press “2”))
+ > Labeled Choices: Have choices labeled something like this format [Menu - Press M, Talk to {character} - Press E, Quit - Press Q ]
+ > Menu option: After an event sequence (when the character’s done responding to any dialogue) player will have a choice 
+ > Optional: Day/NightCycle; after three conversations with a character, a full day has passed ;; Itemization: Player can give gifts to character to raise mood points after completing some events, gift giving will raise up/down depending on if they are compatible with gift
+
+
 
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
