@@ -14,7 +14,7 @@
  > * What will be the input/output of your project?
  > Input and output through the terminal, the player will get different options and they choose based on that
  > * What are the features that the project provides?
- >  * Branching dialogue trees: Depending on the player’s option of dialogue, the character’s response will change and reflect the option.
+ >  * * Branching dialogue trees: Depending on the player’s option of dialogue, the character’s response will change and reflect the option.
  >  * Inclusion of mood points: The mood points will be a numeric value that display the affection character has for the player 
  >  * Character interactions with input: The player will get different dialogue options and they choose based on the user pressing assigned keys from the keyboard(i.e. {Dialogue Option 1} (Press “1”),{Dialogue Option 2} (Press “2”))
  >  * Labeled Choices: Have choices labeled something like this format [Menu - Press M, Talk to {character} - Press E, Quit - Press Q ]
