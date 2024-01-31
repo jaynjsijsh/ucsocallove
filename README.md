@@ -6,13 +6,13 @@
  
 ## Project Description
  > * Project Description:
- > This project explores the different dating options and stereotypes of the UC’s in Southern California as we create personalities for each of the UC’s. The player (new transfer student) will have the opportunity to choose between multiple text options and depending on the players choice, it can either make the characters like or dislike the player. At the end of the game, the mascot the player matches with the most will be the school they transfer to. 
+ >   * This project explores the different dating options and stereotypes of the UC’s in Southern California as we create personalities for each of the UC’s. The player (new transfer student) will have the opportunity to choose between multiple text options and depending on the players choice, it can either make the characters like or dislike the player. At the end of the game, the mascot the player matches with the most will be the school they transfer to. 
  > * Why is it important or interesting to you?
- > As a SoCal UC student, we would like to explore dating opportunities. We want to explore developing a choice based game
+ >   * As a SoCal UC student, we would like to explore dating opportunities. We want to explore developing a choice based game
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- > C++ on VSCode, Git and Github
+ >   * C++ on VSCode, Git and Github
  > * What will be the input/output of your project?
- > Input and output through the terminal, the player will get different options and they choose based on that
+ >   * Input and output through the terminal, the player will get different options and they choose based on that
  > * What are the features that the project provides?
  >   * Branching dialogue trees: Depending on the player’s option of dialogue, the character’s response will change and reflect the option.
  >   * Inclusion of mood points: The mood points will be a numeric value that display the affection character has for the player 
