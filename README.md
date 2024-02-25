@@ -27,20 +27,20 @@
 ## User Interface Specification
 
 ### Navigation Diagram
-![Alt text](image.png)
+![Alt text](../Milestone/image.png)
 
 ### Screen Layouts
-![Alt text](image-3.png)
-![Alt text](image-4.png)
-![Alt text](image-5.png)
-![Alt text](image-6.png)
-![Alt text](image-7.png)
-![Alt text](image-8.png)
-![Alt text](image-9.png)
-![Alt text](image-10.png)
+![Alt text](../Milestone/image-3.png)
+![Alt text](../Milestone/image-4.png)
+![Alt text](../Milestone/image-5.png)
+![Alt text](../Milestone/image-6.png)
+![Alt text](../Milestone/image-7.png)
+![Alt text](../Milestone/image-8.png)
+![Alt text](../Milestone/image-9.png)
+![Alt text](../Milestone/image-10.png)
 
 ## Class Diagram
- ![Alt text](image-2.png)
+ ![Alt text](../Milestone/image-2.png)
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
