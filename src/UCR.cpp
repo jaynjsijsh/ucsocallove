@@ -1,4 +1,4 @@
-#include "UCR.h"
+#include "../header/UCR.h"
 
 UCR::UCR(string name, int moodPoints, vector<string> likes,
          vector<string> dislikes) {
