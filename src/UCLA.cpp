@@ -1,6 +1,6 @@
-#include "../header/UCR.h"
+#include "../header/UCLA.h"
 
-UCR::UCR(string name, int moodPoints, vector<string> likes,
+UCLA::UCLA(string name, int moodPoints, vector<string> likes,
          vector<string> dislikes) {
   this->name = name;
   this->moodPoints = moodPoints;
@@ -8,11 +8,11 @@ UCR::UCR(string name, int moodPoints, vector<string> likes,
   this->dislikes = dislikes;
 }
 
-void UCR::UpdateCharacterCard() {
+void UCLA::UpdateCharacterCard() {
   // Update likes
   // Update dislikes
 }
-void UCR::DisplayMoodPoints() {
+void UCLA::DisplayMoodPoints() {
   if (this->GetMoodPoints() >= 10) {
     cout << "Mood Points: " << this->GetMoodPoints() << endl;
     cout << this->name << " thinks you are a lover!! <3" << endl;
@@ -27,7 +27,7 @@ void UCR::DisplayMoodPoints() {
     cout << this->name << " hates you >:(" << endl;
   }
 }
-void UCR::DisplayCharacterCard() {
+void UCLA::DisplayCharacterCard() {
   // Print name
   cout << "Name: " << this->name << endl;
   // Print likes

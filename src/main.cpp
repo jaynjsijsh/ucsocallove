@@ -1,13 +1,13 @@
 #include "../header/Character.h"
-#include "../header/UCR.h"
+#include "../header/UCLA.h"
 #include <iostream>
 #include <vector>
 
 int main() {
   int ucrmood = 0;
-  vector<string> UCRLikes = {"", "", ""};
-  vector<string> UCRDislikes = {"", "", ""};
-  UCR S("Scottie", ucrmood, UCRLikes, UCRDislikes);
+  vector<string> UCLALikes = {"", "", ""};
+  vector<string> UCLADislikes = {"", "", ""};
+  UCLA A("Angel", UCLAmoodPoints, UCLALikes, UCLADislikes);
 
-  S.DisplayCharacterCard();
+  A.DisplayCharacterCard();
 }
