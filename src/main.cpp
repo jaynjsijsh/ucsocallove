@@ -16,9 +16,6 @@ int main() {
 
  
  Game game;
- game.DisplayIntroMenu();
- game.DisplayHowToPlay();
- game.GameDescription();
- game.DisplaySubMenu();
- game.DisplayQuitScreen();
+ game.StartGame();
+ return 0;
 }
