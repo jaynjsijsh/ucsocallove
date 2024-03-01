@@ -1,12 +1,21 @@
 #include "../header/Game.h"
+#include "../header/UCR.h"
 #include <cstdlib>
 #include <iostream>
 #include <limits>
 #include <string>
+#include <vector>
 using namespace std;
 
 // global var
 // string name;
+string name;
+
+int ucrmood = 0;
+vector<string> UCRLikes = {"", "", "", ""};
+vector<string> UCRDislikes = {"", "", "", ""};
+string playerName = name;
+UCR Scotty("Scotty", ucrmood, UCRLikes, UCRDislikes, playerName);
 
 // constructor
 Game::Game(){};
@@ -50,7 +59,6 @@ void Game::DisplayIntroMenu() {
 }
 
 void Game::StartGame() {
-  string name;
 
   cout << "--- Welcome to the UC Socal Love Quest ---  \n "
           "\nNarrator: Ah, the vibrant life of a university student, filled "
@@ -66,7 +74,7 @@ void Game::StartGame() {
              '\n'); // Ignore characters until a newline is found
 
   getline(cin, name); // Use getline to read the entire line, including spaces.
-  this->name = name;
+  // this->name = name;
   cout << "\nNarrator: Wonderful to meet you, " << name
        << ". It's always a pleasure to guide a new face through the twists and "
           "turns of university life.\n"
@@ -84,6 +92,49 @@ void Game::DisplaySubMenu() {
           "character card"
        << endl
        << endl;
+  cin >> input;
+  switch (input) {
+  case 'c':
+    break; // break and return to dialogue
+  case 'q':
+    DisplayQuitScreen();
+  case 'v':
+    // display the character card
+    int cardOption;
+    cout << "Welcome to your character cards, which characters stats would you "
+            "like to see?\n\n"
+            "1: UCR\n"
+            "2: UCLA\n"
+            "3: UCI\n"
+            "4: UCSD\n"
+            "5: UCSB\n"
+         << endl;
+    cin >> cardOption;
+    // using card option display a specific characters card
+    switch (cardOption) {
+    case 1:
+      Scotty.DisplayCharacterCard();
+      break;
+    case 2:
+      break;
+    case 3:
+      break;
+    case 4:
+      break;
+    case 5:
+      break;
+    // default case for character card
+    default:
+      cout << "Invalid input. Please try again.\n\n";
+      break; // Show the menu again for any other input
+    }
+    break;
+
+  // default case for submenu
+  default:
+    cout << "Invalid input. Please try again.\n\n";
+    break; // Show the menu again for any other input
+  }
 }
 
 void Game::DisplayHowToPlay() {
@@ -129,18 +180,20 @@ void Game::GameDescription() {
 
 void Game::DisplayOrientation() {
   string activity;
-  cout << "\n\nNarrator: Welcome, everyone, to your first day! Today, you'll meet "
+  cout << "\n\nNarrator: Welcome, everyone, to your first day! Today, you'll "
+          "meet "
           "some remarkable     students, each with their own unique passions "
           "and stories. Let's hear from them directly about   their favorite "
           "outdoor activities. And you, " +
-              this->name +
+              name +
               ", what's an outdoor activity that   you enjoy? Feel free to "
               "share with us(enter a one word verb)."
-       << endl << endl;
+       << endl
+       << endl;
   cout << "Verb: ";
   getline(cin, activity);
   cout << endl << endl;
-  
+
   cout << this->name << ": I like " << activity << "!" << endl << endl;
 
   cout << "Scotty: Hey there! I'm all about hiking. There's nothing like the "
@@ -156,8 +209,10 @@ void Game::DisplayOrientation() {
        << endl;
 
   cout
-      << "...\n\nNarrator: As the day unfolds, you get to know more about each student.\n\n"
-         "...\n\nWith Scotty: As you discuss hiking trails, Scotty's eyes light up. "
+      << "...\n\nNarrator: As the day unfolds, you get to know more about each "
+         "student.\n\n"
+         "...\n\nWith Scotty: As you discuss hiking trails, Scotty's eyes "
+         "light up. "
          "'You know, there's this trail not too far from here that's "
          "absolutely breathtaking in the early morning. We should check it out "
          "sometime!' His straightforward invitation makes you feel instantly "
@@ -193,8 +248,105 @@ void Game::DisplayOrientation() {
          "Narrator: Dreams of future adventures and the friendships you've "
          "begun to forge accompany you into the night. Tomorrow is another "
          "day, filled with new opportunities and experiences at the UC. "
-         "Goodnight, " + this->name + ".\n\n"
-         "[End of the scenario]"
+         "Goodnight, " +
+             name +
+             ".\n\n"
+             "[End of the scenario]"
       << endl;
+  PromptSubMenu();
 }
 
+void Game::CoffeeScene() {
+  int drink;
+  cout << "Narrator: The aroma of freshly brewed coffee fills the air as you "
+          "step into the cozy campus coffee shop. It's a bustling hub of "
+          "activity, with students from various backgrounds engrossed in "
+          "different pursuits. The menu boasts a diverse selection of drinks, "
+          "each one a favorite of the friends you've made so far. What will "
+          "you choose\n\n"
+          "1. A bold espresso (Angel's choice)\n"
+          "2. A soothing herbal tea (Peta's choice)\n"
+          "3. A refreshing iced latte (Scotty's choice)\n"
+          "4. A rich hot chocolate (Tris's choice)\n"
+          "5. A vibrant fruit smoothie (Santi's choice)\n"
+       << endl;
+  cin >> drink;
+  switch (drink) {
+  case 1:
+    break;
+  case 2:
+    break;
+  case 3:
+    Scotty.IncreaseMoodPoints(3);
+    Scotty.DisplayMoodPoints();
+    // break;
+  case 4:
+    break;
+  case 5:
+    break;
+  default:
+    cout << "Invalid input. Please try again.\n\n";
+    break; // Show the menu again for any other input
+  }
+
+  int activity;
+  cout << "\nNarrator: With your drink in hand, you glance around at the "
+          "various activities unfolding around you. What brings you to the "
+          "coffee shop today?\n\n"
+
+          "1. To study for an upcoming exam (Angel's activity)\n"
+          "2. To enjoy a quiet read (Peta's activity)\n"
+          "3. To sketch the scenery (Scotty's activity)\n"
+          "4. To dive into a new video game (Tris's activity)\n"
+          "5. To socialize and meet new people (Santi's activity)\n"
+       << endl;
+
+  cin >> activity;
+  switch (activity) {
+  case 1:
+    break;
+  case 2:
+    break;
+  case 3:
+    Scotty.IncreaseMoodPoints(7);
+    Scotty.DisplayMoodPoints();
+    // ucr.DisplayCoffeeScene();
+    break;
+  case 4:
+    break;
+  case 5:
+    break;
+  default:
+    cout << "Invalid input. Please try again.\n\n";
+    break; // Show the menu again for any other input
+  }
+
+  cout << "\n...\n\nNarrator: As the hours slip by, you find yourself deeply "
+          "engaged in the activity you've chosen, learning more about your "
+          "companion and yourself in the process. The coffee shop has become a "
+          "place of connection, reflection, and discovery.\n\n...\n\n"
+          "[The scene gently fades to the background noise of the coffee shop]"
+          "\n\n...\n\nNarrator: You leave the coffee shop feeling refreshed "
+          "and inspired, ready to tackle the next adventure that awaits you on "
+          "campus. The relationships you're building here will surely last a "
+          "lifetime.\n\n"
+          "[End of the scenario]"
+       << endl;
+
+  PromptSubMenu();
+}
+
+void Game::PromptSubMenu() {
+  int dispSub;
+
+  cout
+      << "Would you like to see the submenu? (1 for yes, any other input is no)"
+      << endl;
+  cin >> dispSub;
+  if (dispSub == 1) {
+    DisplaySubMenu();
+  } 
+  else {
+    // continue to next event
+  }
+}

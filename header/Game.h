@@ -19,6 +19,8 @@ void DisplayQuitScreen();
 void GameDescription();
 void DisplayOrientation();
 void CoffeeScene();
+void PromptSubMenu();
+
 };
 
 #endif
