@@ -1,16 +1,16 @@
 #include "../header/UCR.h"
 
 UCR::UCR(string name, int moodPoints, vector<string> likes,
-         vector<string> dislikes) {
+         vector<string> dislikes, string playerName) {
   this->name = name;
   this->moodPoints = moodPoints;
   this->likes = likes;
   this->dislikes = dislikes;
+  //this->playerName = playerName;
 }
 
 void UCR::UpdateCharacterCard() {
-  // Update likes
-  // Update dislikes
+
 }
 void UCR::DisplayMoodPoints() {
   if (this->GetMoodPoints() >= 10) {
@@ -41,4 +41,21 @@ void UCR::DisplayCharacterCard() {
   for (int i = 0; i < this->dislikes.size(); i++) {
     cout << this->dislikes[i] << ", ";
   }
+}
+
+void UCR::addLikes(string like)
+{
+  likes.push_back(like);
+}
+void UCR::addDislikes(string dislike)
+{
+  dislikes.push_back(dislike);
+}
+
+void UCR::IncreaseMoodPoints(int mPoints){
+  moodPoints += mPoints;
+}
+
+void UCR::DisplayCoffeeScene(){
+  
 }
