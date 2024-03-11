@@ -9,22 +9,24 @@ class Character {
   
 public:
 Character();
-Character(string name, int moodPoints, vector<string> likes, vector<string> dislikes);
+Character(string name, int moodPoints, vector<string> likes, vector<string> dislikes, string playerName);
 
 //int SetMoodPoints(int moodPoints);
-int IncreaseMoodPoints(int mPoints);
 int GetMoodPoints();
-
+private :
+int moodPoints;
 protected:
 vector<string> likes;
 vector<string> dislikes;
-int moodPoints;
 string name;
-//virtual void UpdateCharacterCard() = 0;
+string playerName;
+virtual void UpdateCharacterCard() = 0;
 virtual void DisplayMoodPoints() = 0;
 virtual void DisplayCharacterCard() = 0;
+virtual void DisplayCoffeeScene(int drink) = 0;
 void addLikes(string like);
 void addDislikes(string dislike);
+virtual void IncreaseMoodPoints(int mPoints) = 0;
 };
 
 #endif
