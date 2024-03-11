@@ -12,12 +12,32 @@ using namespace std;
 // string name;
 string name;
 
+string playerName = name;
+
 int ucrmood = 0;
 vector<string> UCRLikes = {};
 vector<string> UCRDislikes = {};
-string playerName = name;
 UCR Scotty("Scotty", ucrmood, UCRLikes, UCRDislikes, playerName);
 
+int ucsbmood = 0;
+vector<string> UCSBLikes = {};
+vector<string> UCSBDislikes = {};
+UCSB Santi("Santi", ucsbmood, UCSBLikes, UCSBDislikes, playerName);
+
+int uclamood = 0;
+vector<string> UCLALikes = {};
+vector<string> UCLADislikes = {};
+UCLA Angel("Angel", uclamood, UCLALikes, UCLADislikes, playerName);
+
+int ucimood = 0;
+vector<string> UCILikes = {};
+vector<string> UCIDislikes = {};
+UCI Peta("Peta", ucimood, UCILikes, UCIDislikes, playerName);
+
+int ucsdmood = 0;
+vector<string> UCSDLikes = {};
+vector<string> UCSDDislikes = {};
+UCSD Tris("Tris", ucsdmood, UCSDLikes, UCSDDislikes, playerName);
 // constructor
 Game::Game(){};
 
@@ -131,12 +151,16 @@ void Game::DisplaySubMenu() {
       Scotty.DisplayCharacterCard();
       break;
     case 2:
+      Angel.DisplayCharacterCard();
       break;
     case 3:
+      Peta.DisplayCharacterCard();
       break;
     case 4:
+      Tris.DisplayCharacterCard();
       break;
     case 5:
+      Santi.DisplayCharacterCard();
       break;
     // default case for character card
     default:
@@ -284,16 +308,20 @@ void Game::CoffeeScene() {
   cin >> drink;
   switch (drink) {
   case 1:
+    Angel.IncreaseMoodPoints(3);
     break;
   case 2:
+    Peta.IncreaseMoodPoints(3);
     break;
   case 3:
     Scotty.IncreaseMoodPoints(3);
-    Scotty.DisplayMoodPoints();
+    //Scotty.DisplayMoodPoints();
     break;
   case 4:
+    Tris.IncreaseMoodPoints(3);
     break;
   case 5:
+    Santi.IncreaseMoodPoints(3);
     break;
   default:
     cout << "Invalid input. Please try again.\n\n";
@@ -314,8 +342,10 @@ void Game::CoffeeScene() {
   cin >> activity;
   switch (activity) {
   case 1:
+    Angel.DisplayCoffeeScene(drink);
     break;
   case 2:
+    Peta.DisplayCoffeeScene(drink);
     break;
   case 3:
     // Scotty.IncreaseMoodPoints(7);
@@ -323,8 +353,10 @@ void Game::CoffeeScene() {
     Scotty.DisplayCoffeeScene(drink);
     break;
   case 4:
+    Tris.DisplayCoffeeScene(drink);
     break;
   case 5:
+    Santi.DisplayCoffeeScene(drink);
     break;
   default:
     cout << "Invalid input. Please try again.\n\n";
@@ -371,8 +403,10 @@ void Game::BeachScene() {
 
   switch (activity) {
   case 1:
+    Tris.DisplayBeachScene();
     break;
   case 2:
+    Angel.DisplayBeachScene();
     break;
   case 3:
     // Scotty.IncreaseMoodPoints(3);
@@ -380,8 +414,10 @@ void Game::BeachScene() {
     Scotty.DisplayBeachScene();
     break;
   case 4:
+    Peta.DisplayBeachScene();
     break;
   case 5:
+    Santi.DisplayBeachScene();
     break;
   default:
     cout << "Invalid input. Please try again.\n\n";
@@ -426,6 +462,7 @@ void Game::Bonfire() {
                 "enjoyed our time together. Would you be interested in going "
                 "on a date, perhaps explore more hidden depths together?\n" };
     cout << SlowTyping(tris);
+    Tris.TrisBigDate();
     break;
   }
   case 2:{
@@ -443,6 +480,7 @@ void Game::Bonfire() {
                 "journey together, maybe over dinner? There's so much more I "
                 "want to learn from you.\n"};
     cout << SlowTyping(angel);
+    Angel.AngelBigDate();
     break;
   }
   case 3: {
@@ -479,7 +517,7 @@ void Game::Bonfire() {
                 "go out sometime? We could visit an art gallery, see more "
                 "beautiful creations together.\n"};
     cout << SlowTyping(peta);
-
+    Peta.PetaBigDate();
     break;
   }
   case 5:{
@@ -496,7 +534,7 @@ void Game::Bonfire() {
                 "[With a grin] Speaking of making moments count, how about we "
                 "try something new for our next adventure? Maybe a date?\n"};
     cout << SlowTyping(santi);
-
+    Santi.SantiBigDate();
     break;
   }
   default:
@@ -542,13 +580,16 @@ void Game::LibraryScene(){
     Scotty.ScottyLibraryScene(book);
     break;
   case 2:
+    Angel.AngelLibraryScene(book);
     break;
   case 3:
-    ;
+    Peta.PetaLibraryScene(book);
     break;
   case 4:
+    Tris.TrisLibraryScene(book);
     break;
   case 5:
+    Santi.SantiLibraryScene(book);
     break;
   default:
     cout << "Invalid input. Please try again.\n\n";
@@ -562,12 +603,13 @@ void Game::MallScene(){
 
   "Ah, the dance! A night where memories are made, and stories begin. Your choice of attire is not just about fabric and color; it's a reflection of your personality, your aspirations, and perhaps even your desires for the evening. As you stand at the crossroads of fashion, five distinct styles catch your eye, each one calling to a different part of your soul.\n\n"
 
-  "A Relaxed Bohemian Ensemble: A comfortable yet stylish flowy maxi dress or a linen shirt paired with relaxed-fit trousers. This outfit speaks to those who find beauty in simplicity and comfort.\n\n"
-  "A Chic Power Suit: A sharp, tailored suit or an elegant pantsuit that exudes confidence and ambition. This selection is for those who command attention not just with their ideas but with their presence.\n\n"
-  "A Soft, Ethereal Look: A delicate, soft-colored dress or a gentle pastel shirt with light fabric trouserse. This outfit choice reflects a soul that values compassion and understanding.\n\n"
-  "A Smart Casual Tech-Inspired Outfit: A sleek, minimalist dress with geometric patterns or a smart button-down shirt paired with dark jeans. This style appeals to those who blend their passion for technology with a touch of personal flair.\n\n"
-  "A Beach-Inspired Festive Attire: A vibrant, patterned short dress or a casual button-up shirt with shorts. This outfit is perfect for those who bring the party with them and enjoy living in the moment.\n\n"};
+  "1. A Relaxed Bohemian Ensemble: A comfortable yet stylish flowy maxi dress or a linen shirt paired with relaxed-fit trousers. This outfit speaks to those who find beauty in simplicity and comfort.\n\n"
+  "2. A Chic Power Suit: A sharp, tailored suit or an elegant pantsuit that exudes confidence and ambition. This selection is for those who command attention not just with their ideas but with their presence.\n\n"
+  "3. A Soft, Ethereal Look: A delicate, soft-colored dress or a gentle pastel shirt with light fabric trouserse. This outfit choice reflects a soul that values compassion and understanding.\n\n"
+  "4. A Smart Casual Tech-Inspired Outfit: A sleek, minimalist dress with geometric patterns or a smart button-down shirt paired with dark jeans. This style appeals to those who blend their passion for technology with a touch of personal flair.\n\n"
+  "5. A Beach-Inspired Festive Attire: A vibrant, patterned short dress or a casual button-up shirt with shorts. This outfit is perfect for those who bring the party with them and enjoy living in the moment.\n\n"};
 
+  cin >> outfit;
 
   int activity;
   const string activityDialogue { "Narrator: After selecting an outfit at the mall but before the dance, as you navigate the maze of shops and attractions, you unexpectedly encounter the UC characters. Each offers a spontaneous and engaging activity that aligns with their personality and interests. Which one would you like to go to? \n 1. Eco-friendly store \n 2. Leadership seminar \n 3. Volunteer at the charity book sale \n 4. Arcade \n 5. Surf Shop"};
