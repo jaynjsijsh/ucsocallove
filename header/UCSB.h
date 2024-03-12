@@ -21,7 +21,6 @@ public:
   void DisplayCoffeeScene(int drink);
   void DisplayBeachScene();
   void SantiBigDate();
-  void SantiLibraryScene(int option);
 
 };
 
