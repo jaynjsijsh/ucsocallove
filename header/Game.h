@@ -22,9 +22,7 @@ void CoffeeScene();
 void PromptSubMenu();
 void BeachScene();
 void Bonfire();
-void LibraryScene();
-void MallScene();
-void DanceScene();
+
 };
 
 #endif
