@@ -23,7 +23,6 @@ public:
   void DisplayCoffeeScene(int drink);
   void DisplayBeachScene();
   void ScottyBigDate();
-  void ScottyLibraryScene(int option);
 
 };
 
