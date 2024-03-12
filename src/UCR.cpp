@@ -1,10 +1,7 @@
-#include "../header/UCLA.h"
+#include "../header/UCR.h"
 #include "../header/SlowTyping.h"
-#include <iostream>
 
-using namespace std;
-
-UCLA::UCLA(string name, int moodPoints, vector<string> likes,
+UCR::UCR(string name, int moodPoints, vector<string> likes,
          vector<string> dislikes, string playerName) {
   this->name = name;
   this->moodPoints = moodPoints;
@@ -13,11 +10,8 @@ UCLA::UCLA(string name, int moodPoints, vector<string> likes,
   this->playerName = playerName;
 }
 
-void UCLA::UpdateCharacterCard() {
-  // Update likes
-  // Update dislikes
-}
-void UCLA::DisplayMoodPoints() {
+void UCR::UpdateCharacterCard() {}
+void UCR::DisplayMoodPoints() {
   if (this->GetMoodPoints() >= 10) {
     cout << "Mood Points: " << this->GetMoodPoints() << endl;
     cout << this->name << " thinks you are a lover!! <3" << endl;
@@ -32,7 +26,7 @@ void UCLA::DisplayMoodPoints() {
     cout << this->name << " hates you >:(" << endl;
   }
 }
-void UCLA::DisplayCharacterCard() {
+void UCR::DisplayCharacterCard() {
   // Print name
   cout << "Name: " << this->name << endl;
   // Print likes
@@ -48,18 +42,28 @@ void UCLA::DisplayCharacterCard() {
   }
 }
 
-void UCLA::addLikes(string like) { likes.push_back(like); }
-void UCLA::addDislikes(string dislike) { dislikes.push_back(dislike); }
+void UCR::addLikes(string like) { likes.push_back(like); }
+void UCR::addDislikes(string dislike) { dislikes.push_back(dislike); }
 
-void UCLA::IncreaseMoodPoints(int mPoints) { moodPoints += mPoints; }
+void UCR::IncreaseMoodPoints(int mPoints) { moodPoints += mPoints; }
 
-void UCLA::DisplayCoffeeScene(int drink) {
+// Should We include a parameter in each scene that includes the inital
+// interaction's choice (ex: Since it's coffee scene, parameter for the function
+// will be an int. The int represents the choice the player made about which
+// drink they got)
+
+// Ok the way this goes, Scotty asks if they want to hang out, to make sure
+// we're not limiting the character with the iced latter choice. Then we are
+// able to use the parameter to determine what the player chose and how the
+// character will react (with a positive of negative mood point change))
+void UCR::DisplayCoffeeScene(int drink) {
   int option;
-  const string angelScene{
-      "\nWith Angel: You join Angel at a table laden with notes and laptops. Strategy is key, both in games and projects they say "
-      "offering to share their insights on leadership and teamwork. Would you like "
-      "to hang out with them? (1 for yes, any other input is no)\n\n"};
-  cout << SlowTyping(angelScene);
+  const string scottyScene{
+      "\nWith Scotty: Scotty is outside, sketchbook in hand, capturing the "
+      "vibrant campus life. Nature's details are fascinating, they remark, "
+      "inviting you to appreciate the simple beauty around you. Would you like "
+      "to hang out with me? (1 for yes, any other input is no)\n\n"};
+  cout << SlowTyping(scottyScene);
   cin >> option;
   if (option == 1) {
     IncreaseMoodPoints(7);
@@ -68,7 +72,7 @@ void UCLA::DisplayCoffeeScene(int drink) {
     cout << SlowTyping(coffeeTime);
   }
   else {
-    const string rejection {"Angel: Okay, I understand. Maybe next time.\n "};
+    const string rejection {"Scotty: Oh... okay, I understand. Maybe next time.\n "};
     cout << SlowTyping(rejection);
     IncreaseMoodPoints(-10);
     return;
@@ -77,37 +81,32 @@ void UCLA::DisplayCoffeeScene(int drink) {
     switch (drink) {
     case 1: {
       const string drinkChoice1{
-          "\n" + name +" : I got an expresso! \n Angel: I love a good espresso!! It's great that we have so much alike!\n\n"};
+          "\n" + name +" : I got an expresso! \n Scotty: I hate the bitterness of a raw espresso!!\n\n"};
       cout << SlowTyping(drinkChoice1);
-      IncreaseMoodPoints(3);
-      addLikes("expresso");
       break;
     }
     case 2: {
       const string drinkChoice2{
-          "\n" + name + ": I got an herbal tea to soothe me.\n Angel: Oh that's cool! You can't go wrong with herbal tea...\n\n"};
+          "\n" + name + ": I got an herbal tea to soothe me.\n Scotty: Ohh a soothing herbal tea is fine ig...\n\n"};
       cout << SlowTyping(drinkChoice2);
-      IncreaseMoodPoints(1);
       break;
     }
     case 3: {
-      const string drinkChoice3{"\n" + name + ": I got an iced latte!\n Angel: Oh I enjoy a good latte as well.\n\n"};
+      const string drinkChoice3{"\n" + name + ": I got an iced latte!\n Scotty: Omgmg I LOVEEEE iced Lattes.\n\n"};
       cout << SlowTyping(drinkChoice3);
-      IncreaseMoodPoints(1);
+      addLikes("lattes");
       break;
     }
     case 4: {
       const string drinkChoice4{
-          "\n " +name+ ": I got a hot chocolate! \n Angel: Hot chocolate? But it's not even winter?!\n\n"};
+          "\n " +name+ ": I got a hot chocolate! \n Scotty: Hot chocolate is nice in the winter...\n\n"};
       cout << SlowTyping(drinkChoice4);
-      IncreaseMoodPoints(-2);
       break;
     }
     case 5: {
       const string drinkChoice5{
-          "\n" + name + ": I got a refreshing fruit smoothie.\n Angel: Ohhh interesting! Not a big fan of those :|\n\n"};
+          "\n" + name + ": I got a refreshing fruit smoothie.\n Scotty: Fruit smoothies are a no-go. I only really like caffine.\n\n"};
       cout << SlowTyping(drinkChoice5);
-      IncreaseMoodPoints(-1);
       break;
     }
     default:
@@ -117,40 +116,43 @@ void UCLA::DisplayCoffeeScene(int drink) {
   } 
 
 
-void UCLA::DisplayBeachScene() {
+void UCR::DisplayBeachScene() {
   int option;
-  const string s{"Reading Beside Angel\n\n"
-                 "Narrator: Angel is engrossed in a thick book, their expression "
-                 "a mix of concentration and delight. You sit beside them, the sound of waves a gentle backdrop.\n"
+  const string s{"Sunbathing Near Scotty\n\n"
+                 "Narrator: Scotty is stretched out on a towel, their eyes "
+                 "closed in serene contentment. You decide to join them, "
+                 "soaking in the peaceful atmosphere.\n"
                  + name +": It's such a beautiful day, isn't it?\n"
-                 "Angel: It's an exploration of leadership strategies through history. Understanding these concepts fuels my drive for achievement.\n\n"
-                 "1: Discuss the importance of museums for learning (Like)\n"
-                 "2: Complain about the necessity of ambition (Dislike) "};
+                 "Scotty: Absolutely. There's something about the sun and the "
+                 "sand that reconnects us to the earth.\n\n"
+                 "1: Mention your appreciation for music festivals (Like)\n"
+                 "2: Express disdain for outdoor activities (Dislike)"};
   cout << SlowTyping(s);
   cin >> option;
   if (option == 1) {
-    addLikes("Ambition and Learning");
-    const string s{"\nAngel: i love museums too! ;)\n"};
+    addLikes("Music Festivals");
+    const string s{"\nScotty: i love music festivals <33333\n"};
     cout << SlowTyping(s);
   } else if (option == 2) {
     addLikes("Music Festivals");
-    const string s{"\nAngel: I see... well I don't necessarily agree... \n"};
+    const string s{"\nScotty: oh.....\n"};
     cout << SlowTyping(s);
   } else {
     // u dont learn shti
   }
 }
 
-void UCLA::AngelBigDate() {
+void UCR::ScottyBigDate() {
   int option;
   const string s{
-      "\nNarrator: Under the vast canopy of the museum's marbled dome, you await "
-        "Angel's arrival, the air thick with anticipation and the quiet buzz of "
-        "cultured discussions. Museums, where history and innovation intertwine, "
-        "make the perfect playground for a mind as sharp and ambitious as Angel's. "
-        "As they approach, their initial glance seems to sweep over the exhibits with a "
-        "calculated curiosity, a ch allenge to the world to impress them.\n\n"
-      "Angel: I must say, choosing a museum is a bold move. Let's see if the day lives up to my... our expectations.\n\n"
+      "\nNarrator: The gentle rays of the afternoon sun cast a soft glow over "
+      "the botanical gardens, where you've planned to meet Scotty for your "
+      "first date. The air is filled with the fragrance of blooming flowers, "
+      "and the sounds of nature create a serene backdrop. As you find Scotty "
+      "waiting by a fountain, their presence seems to harmonize with the "
+      "surroundings, embodying the tranquility of the gardens.\n\n"
+      "Scotty: Hey! I'm glad you suggested this place. It feels like we're "
+      "away from the world.\n\n"
       "1. Suggest exploring the uphill trail for a panoramic view.\n"
       "2. Propose sitting by the koi pond for a calm reflection.\n"
       "3. Propose a leisurely walk through the aromatic herb garden.\n"
@@ -310,7 +312,7 @@ cin >> foodChoice;
   cout << SlowTyping(lastScene);
 }
 
-void UCLA::AngelLibraryScene(int option){
+void UCR::ScottyLibraryScene(int option){
   switch(option){
     case 1: {
       //scottys reaction to book1
