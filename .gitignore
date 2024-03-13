@@ -10,3 +10,4 @@ runAllTest
 *.a
 
 bin/
+ .vscode/settings.json
