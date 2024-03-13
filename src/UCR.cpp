@@ -1,7 +1,7 @@
 #include "../header/UCR.h"
 #include "../header/SlowTyping.h"
-//#include "../header/Character.h"
-~UCR() {
+#include "../header/Character.h"
+UCR::~UCR() {
   for (auto like : likes) {
         delete like;
     }
@@ -59,7 +59,7 @@ void UCR::DisplayCharacterCard() {
 
 void UCR::addLikes(string like) { likes.push_back(like); }
 void UCR::addDislikes(string dislike) { dislikes.push_back(dislike); }
-
+int UCR::GetMoodPoints(){return this->moodpoints;}
 void UCR::IncreaseMoodPoints(int mPoints) { moodPoints += mPoints; }
 
 // Should We include a parameter in each scene that includes the inital

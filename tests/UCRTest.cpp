@@ -1,5 +1,10 @@
 #include <gtest/gtest.h>
 #include "../header/UCR.h"
+#include "../header/Character.h"
+
+using namespace std;
+#include <iostream>
+#include <string>
 
 // Test fixture for UCR class
 class UCRTest : public ::testing::Test {
@@ -25,7 +30,7 @@ TEST_F(UCRTest, DisplayMoodPointsTest) {
     // Check the output when mood points are 0
     testing::internal::CaptureStdout();
     ucr->DisplayMoodPoints();
-    std::string output = testing::internal::GetCapturedStdout();
+    string output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "Mood Points: 0\nScotty thinks you are a stranger... :/\n");
     
     // Test when mood points are greater than 10

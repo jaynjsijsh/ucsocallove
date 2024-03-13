@@ -12,10 +12,11 @@ Character();
 Character(string name, int moodPoints, vector<string> likes, vector<string> dislikes, string playerName);
 
 //int SetMoodPoints(int moodPoints);
+//int GetMoodPoints();
 
 
 
-int GetMoodPoints();
+
 protected:
 vector<string> likes;
 vector<string> dislikes;
@@ -24,6 +25,7 @@ string playerName;
 int moodPoints;
 virtual ~Character(); 
 virtual string GetName() = 0;
+virtual int GetMoodPoints() = 0;
 //virtual void UpdateCharacterCard() = 0;
 virtual void DisplayMoodPoints() = 0;
 virtual void DisplayCharacterCard() = 0;

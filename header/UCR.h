@@ -13,7 +13,8 @@ private:
   int moodPoints;
 public: 
   UCR(string name, int moodPoints, vector<string> likes, vector<string> dislikes, string playerName);
-  //int GetMoodPoints();
+  
+  int GetMoodPoints();
   ~UCR();
   vector<string> GetLikes();
   vector<string> GetDislikes();
