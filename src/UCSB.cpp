@@ -9,6 +9,31 @@ UCSB::UCSB(string name, int moodPoints, vector<string> likes,
   this->playerName = playerName;
 }
 
+UCSB::~UCSB() {
+  // for (auto like : likes) {
+  //       delete like;
+  //   }
+    likes.clear();
+
+    // for (auto dislike : dislikes) {
+    //     delete dislike;
+    // }
+    dislikes.clear();
+    
+}
+
+vector<string> UCR::GetLikes() {
+  return {this->likes};
+}
+
+vector<string> UCR::GetDislikes(){
+  return {this->dislikes};
+}
+
+string UCR::GetName() {
+  return this->name;
+}
+
 void UCSB::DisplayMoodPoints() {
   if (this->GetMoodPoints() >= 10) {
     cout << "Mood Points: " << this->GetMoodPoints() << endl;
