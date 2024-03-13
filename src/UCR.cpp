@@ -1,5 +1,5 @@
 #include "../header/UCR.h"
-#include "../header/SlowTyping.h"
+//#include "../header/SlowTyping.h"
 #include "../header/Character.h"
 
 
@@ -12,6 +12,17 @@ UCR::UCR(string name, int moodPoints, vector<string> likes,
   this->playerName = playerName;
 }
 
+vector<string> UCR::GetLikes() {
+  return this->likes;
+}
+
+vector<string> UCR::GetDislikes(){
+  return this->dislikes;
+}
+
+string UCR::GetName() {
+  return this->name;
+}
 //void UCR::UpdateCharacterCard() {}
 
 void UCR::DisplayMoodPoints() {

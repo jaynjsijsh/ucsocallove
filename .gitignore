@@ -1,0 +1,12 @@
+a.out
+googletest
+
+CMakeCache.txt
+CMakeFiles/
+CMakeFiles
+cmake_install.cmake
+Makefile
+
+*.a
+
+bin/
