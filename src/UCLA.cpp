@@ -1,8 +1,6 @@
+#include "../header/Character.h"
 #include "../header/UCLA.h"
 #include "../header/SlowTyping.h"
-#include <iostream>
-
-using namespace std;
 
 UCLA::UCLA(string name, int moodPoints, vector<string> likes,
          vector<string> dislikes, string playerName) {
@@ -13,9 +11,28 @@ UCLA::UCLA(string name, int moodPoints, vector<string> likes,
   this->playerName = playerName;
 }
 
-void UCLA::UpdateCharacterCard() {
-  // Update likes
-  // Update dislikes
+UCLA::~UCLA() {
+  // for (auto like : likes) {
+  //       delete like;
+  //   }
+    likes.clear();
+
+    // for (auto dislike : dislikes) {
+    //     delete dislike;
+    // }
+    dislikes.clear();
+    
+}
+vector<string> UCLA::GetLikes() {
+  return {"dlkjfdl"};
+}
+
+vector<string> UCLA::GetDislikes(){
+  return {"this->dislikes"};
+}
+
+string UCLA::GetName() {
+  return this->name;
 }
 void UCLA::DisplayMoodPoints() {
   if (this->GetMoodPoints() >= 10) {
@@ -50,6 +67,7 @@ void UCLA::DisplayCharacterCard() {
 
 void UCLA::addLikes(string like) { likes.push_back(like); }
 void UCLA::addDislikes(string dislike) { dislikes.push_back(dislike); }
+int UCLA::GetMoodPoints(){return this->moodPoints;}
 
 void UCLA::IncreaseMoodPoints(int mPoints) { moodPoints += mPoints; }
 

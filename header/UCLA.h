@@ -3,14 +3,20 @@
 
 #include <iostream>
 using namespace std;
-
-#include "Character.h"
+#include "../header/Character.h"
 
 class UCLA : public Character {
 private:
+int moodPoints;
 public: 
   UCLA(string name, int moodPoints, vector<string> likes, vector<string> dislikes, string playerName);
-  void UpdateCharacterCard();
+
+  int GetMoodPoints();
+  ~UCLA();
+  vector<string> GetLikes();
+  vector<string> GetDislikes();
+  string GetName();
+
   void DisplayMoodPoints();
   void IncreaseMoodPoints(int mPoints);
   void DisplayCharacterCard();
