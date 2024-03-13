@@ -1,6 +1,9 @@
 #include "../header/UCR.h"
 #include "../header/SlowTyping.h"
 //#include "../header/Character.h"
+
+using namespace std;
+
 ~UCR() {
   for (auto like : likes) {
         delete like;
