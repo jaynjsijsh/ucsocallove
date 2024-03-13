@@ -26,6 +26,7 @@ int moodPoints;
 virtual ~Character(); 
 virtual string GetName() = 0;
 virtual int GetMoodPoints() = 0;
+virtual vector<string> GetLikes() = 0;
 //virtual void UpdateCharacterCard() = 0;
 virtual void DisplayMoodPoints() = 0;
 virtual void DisplayCharacterCard() = 0;
