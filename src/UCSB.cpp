@@ -1,5 +1,8 @@
 #include "../header/UCSB.h"
 #include "../header/SlowTyping.h"
+#include "../header/Character.h"
+#include <iostream>
+using namespace std;
 
 UCSB::UCSB(string name, int moodPoints, vector<string> likes,
          vector<string> dislikes, string playerName) {
@@ -69,7 +72,7 @@ void UCSB::DisplayCharacterCard() {
 
 void UCSB::addLikes(string like) { likes.push_back(like); }
 void UCSB::addDislikes(string dislike) { dislikes.push_back(dislike); }
-
+int UCSB::GetMoodPoints(){return this->moodPoints;}
 void UCSB::IncreaseMoodPoints(int mPoints) { moodPoints += mPoints; }
 
 void UCSB::DisplayCoffeeScene(int drink) {

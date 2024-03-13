@@ -14,5 +14,5 @@ add_executable(main src/main.cpp ${SOURCE_FILES})
 set(TEST_FILES 
 tests/SlowTypingTest.cpp
 tests/UCSBTest.cpp)
-add_executable(runAllTest test ${TEST_FILES} ${SOURCE_FILES})
+add_executable(runAllTest tests ${TEST_FILES} ${SOURCE_FILES})
 target_link_libraries(runAllTest gtest gtest_main )

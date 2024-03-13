@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../header/UCR.h"
+#include "../header/UCSB.h"
 #include "../header/Character.h"
 
 using namespace std;
@@ -17,7 +17,7 @@ protected:
         int ucsbmood = 0;
         vector<string> likes = {"Music Festivals", "Nature"};
         vector<string> dislikes = {"Processed Foods", "Inactivity"};
-        ucr = new UCR("santi", ucsbmood, likes, dislikes, playerName);
+        ucsb = new UCSB("Santi", ucsbmood, likes, dislikes, playerName);
     }
 
     void TearDown() override {
@@ -37,7 +37,7 @@ TEST_F(UCSBTest, DisplayMoodPointsTest) {
     
     // Test when mood points are greater than 10
     ucsb->IncreaseMoodPoints(15);
-    EXPECT_EQ(ucr->GetMoodPoints(), 15);
+    EXPECT_EQ(ucsb->GetMoodPoints(), 15);
     // Check the output when mood points are greater than 10
     testing::internal::CaptureStdout();
     ucsb->DisplayMoodPoints();
