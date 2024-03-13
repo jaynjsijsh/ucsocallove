@@ -79,6 +79,7 @@ void UCLA::DisplayCoffeeScene(int drink) {
       const string drinkChoice1{
           "\n" + name +" : I got an expresso! \n Angel: I love a good espresso!! It's great that we have so much alike!\n\n"};
       cout << SlowTyping(drinkChoice1);
+      IncreaseMoodPoints(3);
       addLikes("expresso");
       break;
     }
