@@ -27,7 +27,7 @@ virtual void DisplayCoffeeScene(int drink) = 0;
 void addLikes(string like);
 void addDislikes(string dislike);
 virtual void IncreaseMoodPoints(int mPoints) = 0;
-virtual void changeDanceChoice() = 0;
+////virtual void changeDanceChoice() = 0;
 virtual bool isDanceChoice() = 0;
 };
 
