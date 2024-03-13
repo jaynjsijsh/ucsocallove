@@ -25,11 +25,11 @@ UCR::~UCR() {
     
 }
 vector<string> UCR::GetLikes() {
-  return {"dlkjfdl"};
+  return {this->likes};
 }
 
 vector<string> UCR::GetDislikes(){
-  return {"this->dislikes"};
+  return {this->dislikes};
 }
 
 string UCR::GetName() {
