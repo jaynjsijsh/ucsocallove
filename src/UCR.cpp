@@ -1,17 +1,18 @@
 #include "../header/UCR.h"
 #include "../header/SlowTyping.h"
-#include "../header/Character.h"
+//#include "../header/Character.h"
+~UCR() {
+  for (auto like : likes) {
+        delete like;
+    }
+    likes.clear();
 
-
-UCR::UCR(string name, int moodPoints, vector<string> likes,
-         vector<string> dislikes, string playerName) {
-  this->name = name;
-  this->moodPoints = moodPoints;
-  this->likes = likes;
-  this->dislikes = dislikes;
-  this->playerName = playerName;
+    for (auto dislike : dislikes) {
+        delete dislike;
+    }
+    dislikes.clear();
+    
 }
-
 vector<string> UCR::GetLikes() {
   return this->likes;
 }

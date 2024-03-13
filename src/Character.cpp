@@ -2,11 +2,11 @@
 
 Character::Character()
 {
-  string name = "";
-  int moodPoints = 0;
-  vector<string> likes = {};
-  vector<string> dislikes = {};
-  string playerName = "";
+   name = "";
+   moodPoints = 0;
+  likes = {};
+  dislikes = {};
+  playerName = "";
 }
 
 Character::Character(string name, int moodPoints, vector<string> likes, vector<string> dislikes, string playerName)
@@ -17,6 +17,7 @@ Character::Character(string name, int moodPoints, vector<string> likes, vector<s
   this->dislikes = dislikes;
 }
 
+Character::~Character(){}
 
 int Character::GetMoodPoints(){
   return moodPoints;
