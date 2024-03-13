@@ -54,3 +54,11 @@ TEST_F(UCRTest, IncreaseMoodPointsTest){
     // ASSERT_EQ(ucr->GetMoodPoints(), -5);
 }
 
+TEST_F(UCRTest, GetNameTest){
+    ASSERT_EQ(ucr->GetName(), "Scotty");
+}
+
+TEST_F(UCRTest, GetLikesTest){
+    EXPECT_EQ(ucr->GetLikes().back, "Nature");
+}
+
