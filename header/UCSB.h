@@ -9,10 +9,15 @@ using namespace std;
 
 class UCSB : public Character {
 private:
-  //something ucr only has??
+  int moodPoints;
 public: 
   UCSB(string name, int moodPoints, vector<string> likes, vector<string> dislikes, string playerName);
-  void UpdateCharacterCard();
+  
+  int GetMoodPoints();
+  ~UCSB();
+  vector<string> GetLikes();
+  vector<string> GetDislikes();
+  string GetName();
   void DisplayMoodPoints();
   void IncreaseMoodPoints(int mPoints);
   void DisplayCharacterCard();
