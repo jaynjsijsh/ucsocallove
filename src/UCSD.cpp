@@ -1,5 +1,6 @@
-#include "UCSD.h"
-//#include "SlowTyping.h"
+#include "../header/UCSD.h"
+#include "../header/SlowTyping.h"
+#include "../header/Character.h"
 using namespace std;
 #include <iostream>
 #include <vector>
@@ -14,6 +15,32 @@ UCSD::UCSD(string name, int moodPoints, vector<string> likes,
   this->playerName = playerName;
 }
 
+UCSD::~UCSD() {
+  // for (auto like : likes) {
+  //       delete like;
+  //   }
+    likes.clear();
+
+    // for (auto dislike : dislikes) {
+    //     delete dislike;
+    // }
+    dislikes.clear();
+    
+}
+
+vector<string> UCSD::GetLikes() {
+  return {"dlkjfdl"};
+}
+
+vector<string> UCSD::GetDislikes(){
+  return {"this->dislikes"};
+}
+
+string UCSD::GetName() {
+  return this->name;
+}
+
+int UCSD::GetMoodPoints(){return this->moodPoints;}
 
 void UCSD::DisplayMoodPoints() {
   if (this->GetMoodPoints() >= 10) {

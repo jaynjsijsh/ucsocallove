@@ -14,6 +14,11 @@ public:
   UCSD(string name, int moodPoints, vector<string> likes, vector<string> dislikes, string playerName);
   //void changeDanceChoice(bool isDate);
   //bool isDanceChoice();
+  ~UCSD();
+   vector<string> GetLikes();
+  vector<string> GetDislikes();
+  string GetName();
+    int GetMoodPoints();
   void DisplayMoodPoints();
   void IncreaseMoodPoints(int mPoints);
   void DisplayCharacterCard();

@@ -1,4 +1,4 @@
-#include "Character.h"
+#include "../header/Character.h"
 
 Character::Character()
 {
@@ -17,9 +17,7 @@ Character::Character(string name, int moodPoints, vector<string> likes, vector<s
   this->dislikes = dislikes;
 }
 
-int Character::GetMoodPoints(){
-  return moodPoints;
-}
+Character::~Character(){}
 
 
 
