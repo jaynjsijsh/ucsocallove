@@ -1,4 +1,5 @@
 #include "../header/UCSB.h"
+#include "../header/SlowTyping.h"
 
 UCSB::UCSB(string name, int moodPoints, vector<string> likes,
          vector<string> dislikes, string playerName) {
@@ -22,15 +23,15 @@ UCSB::~UCSB() {
     
 }
 
-vector<string> UCR::GetLikes() {
+vector<string> UCSB::GetLikes() {
   return {this->likes};
 }
 
-vector<string> UCR::GetDislikes(){
+vector<string> UCSB::GetDislikes(){
   return {this->dislikes};
 }
 
-string UCR::GetName() {
+string UCSB::GetName() {
   return this->name;
 }
 
