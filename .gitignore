@@ -6,7 +6,8 @@ CMakeFiles/
 CMakeFiles
 cmake_install.cmake
 Makefile
-
+runAllTest
 *.a
 
 bin/
+ .vscode/settings.json
