@@ -13,9 +13,11 @@ protected:
 
     void SetUp() override {
         // Initialize your UCR object here with some default parameters
+        string playerName = "b";
+        int ucrmood = 0;
         vector<string> likes = {"Music Festivals", "Nature"};
         vector<string> dislikes = {"Processed Foods", "Inactivity"};
-        ucr = new UCR("Scotty", 0, likes, dislikes, "b");
+        ucr = new UCR("Scotty", ucrmood, likes, dislikes, playerName);
     }
 
     void TearDown() override {

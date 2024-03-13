@@ -12,6 +12,7 @@ private:
   //something ucr only has??
   int moodPoints;
 public: 
+  //UCR();
   UCR(string name, int moodPoints, vector<string> likes, vector<string> dislikes, string playerName);
   
   int GetMoodPoints();

@@ -5,14 +5,15 @@ add_subdirectory(googletest)
 set(SOURCES
     src/Character.cpp
     src/SlowTyping.cpp
-    src/UCR.cpp
     src/main.cpp
+    src/UCR.cpp
    
 )
 
-add_executable(test 
+add_executable(runAllTest 
 tests/UCRTest.cpp
-#tests/SlowTypingTest.cpp
+tests/SlowTypingTest.cpp
+${SOURCES}
 )
 
-target_link_libraries(test gtest gtest_main )
+target_link_libraries(runAllTest gtest gtest_main )
