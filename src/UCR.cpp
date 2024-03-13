@@ -1,5 +1,5 @@
 #include "../header/UCR.h"
-//#include "../header/SlowTyping.h"
+#include "../header/SlowTyping.h"
 #include "../header/Character.h"
 
 
