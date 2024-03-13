@@ -1,6 +1,7 @@
 
 #include "../header/Game.h"
 #include "../header/UCR.h"
+#include "../header/UCLA.h"
 #include <cstdlib>
 #include <iostream>
 #include <limits>
@@ -18,6 +19,7 @@ vector<string> UCRLikes = {};
 vector<string> UCRDislikes = {};
 string playerName = name;
 UCR Scotty("Scotty", ucrmood, UCRLikes, UCRDislikes, playerName);
+UCLA Angel("Angle", uclamood, UCLALikes, UCLADislikes, playerName);
 
 // constructor
 Game::Game(){};
@@ -285,12 +287,12 @@ void Game::CoffeeScene() {
   cin >> drink;
   switch (drink) {
   case 1:
+    Angel.IncreaseMoodPoints(3);
     break;
   case 2:
     break;
   case 3:
     Scotty.IncreaseMoodPoints(3);
-    Scotty.DisplayMoodPoints();
     break;
   case 4:
     break;

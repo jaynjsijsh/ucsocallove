@@ -19,7 +19,6 @@ public:
   void DisplayCoffeeScene(int drink);
   void DisplayBeachScene();
   void AngelBigDate();
-  void AngelLibraryScene(int option);
 
 
 };
