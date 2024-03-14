@@ -12,10 +12,7 @@ UCR::UCR(string name, int moodPoints, vector<string> likes,
   this->playerName = playerName;
 }
 
-UCR::
-using namespace std;
-
-~UCR() {
+UCR::~UCR() {
   // for (auto like : likes) {
   //       delete like;
   //   }
@@ -340,4 +337,3 @@ cin >> foodChoice;
       "more days like this to come.\n"};
   cout << SlowTyping(lastScene);
 }
-
