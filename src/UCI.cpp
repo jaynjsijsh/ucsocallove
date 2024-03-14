@@ -97,7 +97,7 @@ void UCI::DisplayCoffeeScene(int drink) {
     switch (drink) {
     case 1: {
       const string drinkChoice1{
-          "\n" + playerName +" : I got an expresso! \n Peta: Disgusting vermin!! That is what you are!!\n\n"};
+          "\n" + this->playerName +" : I got an expresso! \n Peta: Disgusting vermin!! That is what you are!!\n\n"};
       cout << SlowTyping(drinkChoice1);
       this->IncreaseMoodPoints(-2);
       this->addDislikes("Has a vendetta against expressos.");
@@ -105,7 +105,7 @@ void UCI::DisplayCoffeeScene(int drink) {
     }
     case 2: {
       const string drinkChoice2{
-          "\n" + playerName + ": I got an herbal tea to soothe me.\n Peta: Iced lattes are alright, not"
+          "\n" + this->playerName + ": I got an herbal tea to soothe me.\n Peta: Iced lattes are alright, not"
       "too bad.\n\n"};
       cout << SlowTyping(drinkChoice2);
       this->IncreaseMoodPoints(1);

@@ -15,7 +15,6 @@ using namespace std;
 // global var
 // string name;
 string name;
-
 string playerName;
 
 // constructor
@@ -77,6 +76,7 @@ void Game::StartGame() {
   getline(cin, name); // Use getline to read the entire line, including spaces.
   // this->name = name;
   playerName = name;
+  cout << playerName << endl;
   const string introDialogue2 { "\nNarrator: Wonderful to meet you, " + name
        + ". It's always a pleasure to guide a new face through the twists and "
           "turns of university life.\n"
@@ -92,6 +92,7 @@ int ucrmood = 0;
 vector<string> UCRLikes = {};
 vector<string> UCRDislikes = {};
 UCR Scotty("Scotty", ucrmood, UCRLikes, UCRDislikes, playerName);
+
 
 int ucsbmood = 0;
 vector<string> UCSBLikes = {};
@@ -240,7 +241,7 @@ void Game::DisplayOrientation() {
   getline(cin, activity);
   cout << endl << endl;
 
-  cout << this->name << ": I like " << activity << "!" << endl << endl;
+  cout << name << ": I like " << activity << "!" << endl << endl;
 
   const string dialogue { "Scotty: Hey there! I'm all about hiking. There's nothing like the "
           "peace and quiet of nature to make you feel alive.\n\n"
@@ -295,7 +296,7 @@ void Game::DisplayOrientation() {
              name +
              ".\n\n"
              "[End of the scenario]\n"};
-      cout << SlowTyping(orientation);
+      cout << SlowTyping(dialogue);
   PromptSubMenu();
   
 }
