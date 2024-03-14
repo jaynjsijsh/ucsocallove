@@ -1,6 +1,7 @@
 #include "../header/Character.h"
 #include "../header/UCLA.h"
 #include "../header/SlowTyping.h"
+using namespace std;
 
 UCLA::UCLA(string name, int moodPoints, vector<string> likes,
          vector<string> dislikes, string playerName) {
@@ -24,11 +25,11 @@ UCLA::~UCLA() {
     
 }
 vector<string> UCLA::GetLikes() {
-  return {"dlkjfdl"};
+  return {this->likes};
 }
 
 vector<string> UCLA::GetDislikes(){
-  return {"this->dislikes"};
+  return {this->dislikes};
 }
 
 string UCLA::GetName() {
@@ -142,10 +143,10 @@ void UCLA::DisplayBeachScene() {
   const string s{"Reading Beside Angel\n\n"
                  "Narrator: Angel is engrossed in a thick book, their expression "
                  "a mix of concentration and delight. You sit beside them, the sound of waves a gentle backdrop.\n"
-                 + name +": It's such a beautiful day, isn't it?\n"
+                 + name +": It's such a beautiful day, isn't it?\n\n"
                  "Angel: It's an exploration of leadership strategies through history. Understanding these concepts fuels my drive for achievement.\n\n"
                  "1: Discuss the importance of museums for learning (Like)\n"
-                 "2: Complain about the necessity of ambition (Dislike) "};
+                 "2: Complain about the necessity of ambition (Dislike) \n"};
   cout << SlowTyping(s);
   cin >> option;
   if (option == 1) {
@@ -171,6 +172,7 @@ void UCLA::AngelBigDate() {
         "As they approach, their initial glance seems to sweep over the exhibits with a "
         "calculated curiosity, a challenge to the world to impress them.\n\n"
       "Angel: I must say, choosing a museum is a bold move. Let's see if the day lives up to my... our expectations.\n\n"
+      "Narrator: Where would you like to go? \n"
       "1. Propose heading towards the Renaissance masterpieces.\n"
       "2. Suggest the avant-garde art exhibit.\n"
       "3. Mention the celebrity-themed pop art.\n"
@@ -180,7 +182,7 @@ void UCLA::AngelBigDate() {
   switch (option) {
   case 1: {
     const string option1{
-        "\n" + name + ": How about we explore the Renaissance section first? The blend of art, science, and humanism is fascinating. "
+        "\n" + name + ": How about we explore the Renaissance section first? The blend of art, science, and humanism is fascinating. \n"
         "\nAngel: Ah, the Renaissance—when the world awoke anew. Fine choice! There's nothing like the audacious spirit of innovation to stir the soul."
         "\n\n "};
     addLikes("historical achievements");
@@ -246,7 +248,7 @@ cin >> foodChoice;
   case 1: {
     const string option1{
         ""+ name +" : The sandwiches sound amazing. It's great to enjoy "
-        "something with so much nutrition in it.\n"
+        "something with so much nutrition in it.\n\n"
         "Angel: Oh, great choice! I'm a big fan of sandwiches too\n\n"};
     IncreaseMoodPoints(2);
     cout << SlowTyping(option1);
@@ -254,7 +256,7 @@ cin >> foodChoice;
   }
   case 2: {
     const string option2{""+ name +": I think I'll go with the seasonal "
-                         "salad. Seems like a refreshing option.\n"
+                         "salad. Seems like a refreshing option.\n\n"
                          "Angel: Opting for a fresh, natural option, much like the sustainability efforts we pride ourselves on at UCLA. It's both healthy and environmentally conscious. Impressive decision.\n\n"};
     IncreaseMoodPoints(5);
     cout << SlowTyping(option2);
@@ -263,7 +265,7 @@ cin >> foodChoice;
   case 3: {
     const string option3{
         ""+ name +" : Maybe I'll indulge a bit and go for the pizza. Comfort "
-        "food, right?\n"
+        "food, right?\n\n"
         "Angel: Gourmet pizza, in a museum café? I usually prefer something a bit more healthy and processed foods are not really my thing. Go ahead though!\n\n"};
     IncreaseMoodPoints(-5);
     cout << SlowTyping(option3);
@@ -275,41 +277,41 @@ cin >> foodChoice;
   }
   const string fd{"Narrator: As you make your selection, Angel engages in a lively discussion about the "
         "parallels between food and art, their ambitious nature shining through as they relate culinary choices to personal and "
-        "academic excellence. The meal not only satisfies your hunger but also deepens your connection, offering insights into Angel's world at UCLA.\n"};
+        "academic excellence. The meal not only satisfies your hunger but also deepens your connection, offering insights into Angel's world at UCLA.\n\n"};
   cout << SlowTyping(fd);
   const string evening{
       "Narrator: As the day winds down, you and Angel find yourselves alone in a secluded part of the museum, surrounded by breathtaking art. The quiet ambiance sets a romantic tone.\n\n"};
 
   if (moodPoints >= 15) {
     const string kiss{
-        ""+ name +" : Today was incredible, Angel. I've never seen art and life blend so seamlessly.\n"
-        "Angel: I agree. It's rare to find someone who appreciates the depth of these experiences. You... you've made today special.\n"
+        ""+ name +" : Today was incredible, Angel. I've never seen art and life blend so seamlessly.\n\n"
+        "Angel: I agree. It's rare to find someone who appreciates the depth of these experiences. You... you've made today special.\n\n"
         "Narrator: Angel steps closer, their eyes reflecting the museum's soft lighting, showcasing a mix of vulnerability and the usual confidence.\n"
         ""+ name +" : Angel, I feel there's something between us... more than just shared interests. "
         "\n\n"
         "Angel smiles, a hint of warmth breaking through their usually composed demeanor.\n\n"
-        "Angel: I've felt it too. It's like we've connected on a level I didn't expect.\n"
+        "Angel: I've felt it too. It's like we've connected on a level I didn't expect.\n\n"
         "Leaning in, the space between you diminishes until your lips meet. The kiss is soft, tentative at first, but grows more confident, "
         "mirroring the passion of the art that surrounds you. It's a moment of shared vulnerability and understanding, a promise of future explorations, "
-        "both personal and intellectual."};
-    cout << SlowTyping(kiss);
+        "both personal and intellectual.\n\n"};
+    std::cout << SlowTyping(kiss);
   } else if (moodPoints >= 7){
     const string hug{
         "After an engaging day, you both stand at the museum's exit, reluctant to end the shared adventure.\n\n"
-        ""+ name +": Thank you for today, Angel. I've learned so much from you. \n "
-        "Angel: And I from you. You've opened my eyes to new perspectives. \n "
-        "Narrator: There's a pause, filled with unspoken thoughts and feelings. Angel looks at you, a softness in their eyes. \n"
-        "Angel: Would it be alright if I hugged you? It seems a fitting end to such a memorable day. \n"
+        ""+ name +": Thank you for today, Angel. I've learned so much from you. \n\n "
+        "Angel: And I from you. You've opened my eyes to new perspectives. \n\n "
+        "Narrator: There's a pause, filled with unspoken thoughts and feelings. Angel looks at you, a softness in their eyes. \n\n"
+        "Angel: Would it be alright if I hugged you? It seems a fitting end to such a memorable day. \n\n"
         "Narrator: You nod, smiling, and Angel wraps you in a warm, genuine embrace. It's a moment of comfort and closeness, a silent acknowledgment of the bond formed throughout the day\n\n"};
     cout << SlowTyping(hug);
   }
   else{
     const string rejection{ 
       "Narrator: As you express a desire to deepen the connection, Angel takes a moment before responding, their expression thoughtful and kind. \n"
-      ""+ name +" I've really enjoyed today, Angel. I was hoping we could...\n"
-      "Angel: You mean a lot to me, but I think our journey is meant to be one of friendship and intellectual companionship. \n"
-      "Narrator: There's a pause, filled with a mix of disappointment and understanding.\n"
-      ""+ name +"I see. I respect your feelings, Angel. \n"
+      ""+ name +" I've really enjoyed today, Angel. I was hoping we could...\n\n"
+      "Angel: You mean a lot to me, but I think our journey is meant to be one of friendship and intellectual companionship. \n\n"
+      "Narrator: There's a pause, filled with a mix of disappointment and understanding.\n\n"
+      ""+ name +"I see. I respect your feelings, Angel.\n\n"
       "Angel: I truly value what we've shared today. Let's continue to explore this world, side by side, as friends. \n\n"
     };
   }
