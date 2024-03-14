@@ -68,6 +68,7 @@ void UCSB::DisplayCharacterCard() {
   for (int i = 0; i < this->dislikes.size(); i++) {
     cout << this->dislikes[i] << ", ";
   }
+  cout << endl;
 }
 
 void UCSB::addLikes(string like) { likes.push_back(like); }
@@ -177,7 +178,7 @@ void UCSB::SantiBigDate() {
   switch (option) {
   case 1: {
     const string option1{
-        "\n" + name + ": How about we take part in the volleyball game going on? I bet it'll be super fun. "
+        "\n" + playerName + ": How about we take part in the volleyball game going on? I bet it'll be super fun. "
         "top is amazing\nSanti: Santi: That's the spirit! Let's show them what we've got!\n The game is intense and exhilarating, with Santi "
         "and cheering every point. Their competitive yet playful nature shines through, making the activity even more enjoyable.\n\n "};
     addLikes("volleyball");
@@ -187,7 +188,7 @@ void UCSB::SantiBigDate() {
   }
   case 2: {
     const string option2{
-        "\n" + name + ": How about a stroll along the shore? I've heard it's "
+        "\n" + playerName + ": How about a stroll along the shore? I've heard it's "
         "aromatic and quite relaxing.\nSanti: A walk sounds perfect. There's something about the ocean... It's"
         " like instant peace.\n As you walk, Santi shares stories of their adventures at UCSB, their love for the"
         " ocean evident in every word. The walk turns into a moment of connection, set against the soothing backdrop of waves.\n\n"};
@@ -198,7 +199,7 @@ void UCSB::SantiBigDate() {
   }
   case 3: {
     const string option3{
-        "\n" + name + ": How about watching the sunset?\nSanti: um... I'm more for something active but I guess we can watch"
+        "\n" + playerName + ": How about watching the sunset?\nSanti: um... I'm more for something active but I guess we can watch"
         "the sunset if thats what you enjoy.\n Although you enjoy watching the sun set, you see Santi frowning through the corner of your eye.\n\n"};
     IncreaseMoodPoints(-3);
     addDislikes("inactivity");
@@ -230,7 +231,7 @@ cin >> foodChoice;
   switch (foodChoice) {
   case 1: {
     const string option1{
-        "\n" + name + ": The grilled seafood sounds amazing. It's great to enjoy "
+        "\n" + playerName + ": The grilled seafood sounds amazing. It's great to enjoy "
         "something so connected to the earth.\n"
         "Santi : Ah, you're a person of the ocean, I see! These are fresh from today's "
         "catch. Can't get more Santa Barbara than this\n\n"};
@@ -239,7 +240,7 @@ cin >> foodChoice;
     break;
   }
   case 2: {
-    const string option2{"\n" + name + ": I think I'll go with the vegetable skewers "
+    const string option2{"\n" + playerName + ": I think I'll go with the vegetable skewers "
                          "salad. Seems like a refreshing option.\n"
                          "Santi: ugh I'm not a fan of vegetables.\n\n"};
     IncreaseMoodPoints(3);
@@ -248,7 +249,7 @@ cin >> foodChoice;
   }
   case 3: {
     const string option3{
-        "\n" + name + ": Maybe I'll indulge a bit and go for the ribs. Comfort "
+        "\n" + playerName + ": Maybe I'll indulge a bit and go for the ribs. Comfort "
         "food, right?\n"
         "Santi: Now you're speaking my language! These ribs are a local favorite, "
         "slow-cooked to perfection. Get ready for a flavor explosion!\n\n"};
@@ -274,7 +275,7 @@ cin >> foodChoice;
 
         "You nod, your heart racing as you turn to face them, the moonlight reflecting in their eyes.\n\n"
 
-        + name + ": It was unforgettable, thanks to you. I've never felt so alive.\n\n"
+        + playerName + ": It was unforgettable, thanks to you. I've never felt so alive.\n\n"
 
         "Santi steps closer, the distance between you melting away. You can feel their breath on your face.\n\n "
 

@@ -66,6 +66,7 @@ void UCR::DisplayCharacterCard() {
   for (int i = 0; i < this->dislikes.size(); i++) {
     cout << this->dislikes[i] << ", ";
   }
+  cout << endl;
 }
 
 void UCR::addLikes(string like) { likes.push_back(like); }
@@ -107,34 +108,34 @@ void UCR::DisplayCoffeeScene(int drink) {
     switch (drink) {
     case 1: {
       const string drinkChoice1{
-          "\n" + name +" : I got an expresso! \n Scotty: I hate the bitterness of a raw espresso!!\n\n"};
+          "\n" + playerName +" : I got an expresso! \n Scotty: I hate the bitterness of a raw espresso!!\n\n"};
       cout << SlowTyping(drinkChoice1);
       IncreaseMoodPoints(-2);
       break;
     }
     case 2: {
       const string drinkChoice2{
-          "\n" + name + ": I got an herbal tea to soothe me.\n Scotty: Ohh a soothing herbal tea is fine ig...\n\n"};
+          "\n" + playerName + ": I got an herbal tea to soothe me.\n Scotty: Ohh a soothing herbal tea is fine ig...\n\n"};
       cout << SlowTyping(drinkChoice2);
       IncreaseMoodPoints(-1);
       break;
     }
     case 3: {
-      const string drinkChoice3{"\n" + name + ": I got an iced latte!\n Scotty: Omgmg I LOVEEEE iced Lattes.\n\n"};
+      const string drinkChoice3{"\n" + playerName + ": I got an iced latte!\n Scotty: Omgmg I LOVEEEE iced Lattes.\n\n"};
       cout << SlowTyping(drinkChoice3);
       addLikes("lattes");
       break;
     }
     case 4: {
       const string drinkChoice4{
-          "\n " +name+ ": I got a hot chocolate! \n Scotty: Hot chocolate is nice in the winter...\n\n"};
+          "\n " +playerName+ ": I got a hot chocolate! \n Scotty: Hot chocolate is nice in the winter...\n\n"};
       cout << SlowTyping(drinkChoice4);
       IncreaseMoodPoints(-1);
       break;
     }
     case 5: {
       const string drinkChoice5{
-          "\n" + name + ": I got a refreshing fruit smoothie.\n Scotty: Fruit smoothies are a no-go. I only really like caffine.\n\n"};
+          "\n" + playerName + ": I got a refreshing fruit smoothie.\n Scotty: Fruit smoothies are a no-go. I only really like caffine.\n\n"};
       cout << SlowTyping(drinkChoice5);
       IncreaseMoodPoints(-2);
       break;
@@ -152,7 +153,7 @@ void UCR::DisplayBeachScene() {
                  "Narrator: Scotty is stretched out on a towel, their eyes "
                  "closed in serene contentment. You decide to join them, "
                  "soaking in the peaceful atmosphere.\n"
-                 + name +": It's such a beautiful day, isn't it?\n"
+                 + playerName +": It's such a beautiful day, isn't it?\n"
                  "Scotty: Absolutely. There's something about the sun and the "
                  "sand that reconnects us to the earth.\n\n"
                  "1: Mention your appreciation for music festivals (Like)\n"
@@ -193,7 +194,7 @@ void UCR::ScottyBigDate() {
   switch (option) {
   case 1: {
     const string option1{
-        "\n" + name + ": How about we take the trail uphill? I bet the view from the "
+        "\n" + playerName + ": How about we take the trail uphill? I bet the view from the "
         "top is amazing\nScotty: That sounds perfect! I love a bit of a "
         "workout and getting to explore. It's energizing, don't you "
         "think?\n\n "};
@@ -204,7 +205,7 @@ void UCR::ScottyBigDate() {
   }
   case 2: {
     const string option2{
-        "\n" + name + ": Maybe we could sit by the koi pond? It seems like a "
+        "\n" + playerName + ": Maybe we could sit by the koi pond? It seems like a "
         "peaceful spot to just relax and talk. \n Scotty: I'm all for enjoying "
         "the moment, but I was hoping we could do a bit more walking. Still, "
         "this is nice.\n\n"};
@@ -215,7 +216,7 @@ void UCR::ScottyBigDate() {
   }
   case 3: {
     const string option3{
-        "\nPlayer: How about a stroll through the herb garden? I've heard it's "
+        "\n"+ playerName +": How about a stroll through the herb garden? I've heard it's "
         "aromatic and quite relaxing.\nScotty: That sounds perfect. It's nice "
         "to slow down and enjoy the simple pleasures, like the scent of fresh "
         "herbs.\n\n"};
@@ -226,7 +227,7 @@ void UCR::ScottyBigDate() {
   }
   case 4: {
     const string option4{
-        "\nMaybe we could go inside the museum? It's a bit hot, and I'd love "
+        "\n" + playerName + "Maybe we could go inside the museum? It's a bit hot, and I'd love "
         "to enjoy the AC while looking at the exhibits.\n"
         "Scotty: Oh, I was hoping we'd spend more time outside, but sure, "
         "let's see what the exhibits offer.\n"};
@@ -261,7 +262,7 @@ cin >> foodChoice;
   switch (foodChoice) {
   case 1: {
     const string option1{
-        "Player: The vegetable stew sounds amazing. It's great to enjoy "
+        "\n" + playerName + ": The vegetable stew sounds amazing. It's great to enjoy "
         "something so connected to the earth.\n"
         "Scotty (if chosen): Oh, good choice! It's actually my favorite here. "
         "Love how it tastes just like a garden feels.\n\n"};
@@ -270,7 +271,7 @@ cin >> foodChoice;
     break;
   }
   case 2: {
-    const string option2{"Player: I think I'll go with the grilled chicken "
+    const string option2{"\n" + playerName + ": I think I'll go with the grilled chicken "
                          "salad. Seems like a refreshing option.\n"
                          "Scotty (neutral): That's a solid choice. Their "
                          "salads are always crisp and refreshing.\n\n"};
@@ -280,7 +281,7 @@ cin >> foodChoice;
   }
   case 3: {
     const string option3{
-        "Player: Maybe I'll indulge a bit and go for the cheeseburger. Comfort "
+        "\n" + playerName + ": Maybe I'll indulge a bit and go for the cheeseburger. Comfort "
         "food, right?\n"
         "Scotty (negative): Ah, I usually prefer something a bit more in tune "
         "with nature. Processed foods don't really resonate with me, but go "
@@ -309,7 +310,7 @@ cin >> foodChoice;
         "Scotty: Today was... more than I could've asked for. Being with "
         "someone who appreciates the simple things, the beauty of nature... "
         "it's been really special.\n"
-        "Player: I feel the same. It's rare to find someone who you can share "
+        "\n" + playerName + ": I feel the same. It's rare to find someone who you can share "
         "these moments with. Moments that feel genuine and fulfilling.\n"
         "Narrator: Scotty stops, turning to face you, their eyes reflecting "
         "the moonlight. The air is charged with a palpable connection between "
@@ -325,11 +326,11 @@ cin >> foodChoice;
     const string hug{
         "Scotty: You know, I wasn't sure what to expect from today, but I'm "
         "really happy we spent it together. It's been... nice, really nice. \n "
-        "Player: Yeah, I've enjoyed every moment of it. It's been a day full "
+        "\n" + playerName + ": Yeah, I've enjoyed every moment of it. It's been a day full "
         "of simple pleasures and great company. \n Narrator: There's a brief "
         "pause as you both stand there, soaking in the moment. Then, almost "
         "instinctively, you extend your arms towards Scotty. \n\nOffer a hug. "
-        "\nPlayer action: You open your arms, and Scotty steps into a warm "
+        "\n" + playerName + " action: You open your arms, and Scotty steps into a warm "
         "embrace, a comforting end to the day.\n\nScotty: This hug... it's "
         "perfect. Thanks for being here, for making today what it was.\n\n"};
     cout << SlowTyping(hug);

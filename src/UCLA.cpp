@@ -64,6 +64,7 @@ void UCLA::DisplayCharacterCard() {
   for (int i = 0; i < this->dislikes.size(); i++) {
     cout << this->dislikes[i] << ", ";
   }
+  cout << endl;
 }
 
 void UCLA::addLikes(string like) { likes.push_back(like); }
@@ -96,7 +97,7 @@ void UCLA::DisplayCoffeeScene(int drink) {
     switch (drink) {
     case 1: {
       const string drinkChoice1{
-          "\n" + name +" : I got an expresso! \n Angel: I love a good espresso!! It's great that we have so much alike!\n\n"};
+          "\n" + playerName +" : I got an expresso! \n Angel: I love a good espresso!! It's great that we have so much alike!\n\n"};
       cout << SlowTyping(drinkChoice1);
       //IncreaseMoodPoints(3);
       addLikes("expresso");
@@ -104,20 +105,20 @@ void UCLA::DisplayCoffeeScene(int drink) {
     }
     case 2: {
       const string drinkChoice2{
-          "\n" + name + ": I got an herbal tea to soothe me.\n Angel: Oh that's cool! You can't go wrong with herbal tea...\n\n"};
+          "\n" + playerName + ": I got an herbal tea to soothe me.\n Angel: Oh that's cool! You can't go wrong with herbal tea...\n\n"};
       cout << SlowTyping(drinkChoice2);
       IncreaseMoodPoints(1);
       break;
     }
     case 3: {
-      const string drinkChoice3{"\n" + name + ": I got an iced latte!\n Angel: Oh I enjoy a good latte as well.\n\n"};
+      const string drinkChoice3{"\n" + playerName + ": I got an iced latte!\n Angel: Oh I enjoy a good latte as well.\n\n"};
       cout << SlowTyping(drinkChoice3);
       IncreaseMoodPoints(1);
       break;
     }
     case 4: {
       const string drinkChoice4{
-          "\n " +name+ ": I got a hot chocolate! \n Angel: Hot chocolate? But it's not even winter?!\n\n"};
+          "\n " +playerName+ ": I got a hot chocolate! \n Angel: Hot chocolate? But it's not even winter?!\n\n"};
       cout << SlowTyping(drinkChoice4);
       addDislikes("hot chocolate in any season except winter");
       IncreaseMoodPoints(-2);
@@ -125,7 +126,7 @@ void UCLA::DisplayCoffeeScene(int drink) {
     }
     case 5: {
       const string drinkChoice5{
-          "\n" + name + ": I got a refreshing fruit smoothie.\n Angel: Ohhh interesting! Not a big fan of those :|\n\n"};
+          "\n" + playerName + ": I got a refreshing fruit smoothie.\n Angel: Ohhh interesting! Not a big fan of those :|\n\n"};
       cout << SlowTyping(drinkChoice5);
       //addDislikes("fruit smoothies cause its basic");
       IncreaseMoodPoints(-1);
@@ -143,7 +144,7 @@ void UCLA::DisplayBeachScene() {
   const string s{"Reading Beside Angel\n\n"
                  "Narrator: Angel is engrossed in a thick book, their expression "
                  "a mix of concentration and delight. You sit beside them, the sound of waves a gentle backdrop.\n"
-                 + name +": It's such a beautiful day, isn't it?\n\n"
+                 + playerName +": It's such a beautiful day, isn't it?\n\n"
                  "Angel: It's an exploration of leadership strategies through history. Understanding these concepts fuels my drive for achievement.\n\n"
                  "1: Discuss the importance of museums for learning (Like)\n"
                  "2: Complain about the necessity of ambition (Dislike) \n"};
@@ -182,7 +183,7 @@ void UCLA::AngelBigDate() {
   switch (option) {
   case 1: {
     const string option1{
-        "\n" + name + ": How about we explore the Renaissance section first? The blend of art, science, and humanism is fascinating. \n"
+        "\n" + playerName + ": How about we explore the Renaissance section first? The blend of art, science, and humanism is fascinating. \n"
         "\nAngel: Ah, the Renaissance—when the world awoke anew. Fine choice! There's nothing like the audacious spirit of innovation to stir the soul."
         "\n\n "};
     addLikes("historical achievements");
@@ -192,7 +193,7 @@ void UCLA::AngelBigDate() {
   }
   case 2: {
     const string option2{
-        "\n" + name + ": Maybe the avant-garde art exhibit could be interesting? "
+        "\n" + playerName + ": Maybe the avant-garde art exhibit could be interesting? "
         "It's all about challenging norms and pushing boundaries. \n Angel: Hm, avant-garde, you say? "
         "A test of one's ability to see beyond the conventional. I'm curious to see if you can keep up with the challenge. Lead the way! "
         "\n\n"};
@@ -203,7 +204,7 @@ void UCLA::AngelBigDate() {
   }
   case 3: {
     const string option3{
-        "\n "+ name +": What about checking out the celebrity-themed pop art? "
+        "\n "+ playerName +": What about checking out the celebrity-themed pop art? "
         "It could be fun to see the modern takes on fame.\nAngel: Pop art? Celebrity culture? "
         " I suppose there's merit in understanding the masses... but let's not dawdle. I'd rather seek out art that "
         "challenges the mind, not what panders to it.\n\n"};
@@ -247,7 +248,7 @@ cin >> foodChoice;
   switch (foodChoice) {
   case 1: {
     const string option1{
-        ""+ name +" : The sandwiches sound amazing. It's great to enjoy "
+        ""+ playerName +" : The sandwiches sound amazing. It's great to enjoy "
         "something with so much nutrition in it.\n\n"
         "Angel: Oh, great choice! I'm a big fan of sandwiches too\n\n"};
     IncreaseMoodPoints(2);
@@ -255,7 +256,7 @@ cin >> foodChoice;
     break;
   }
   case 2: {
-    const string option2{""+ name +": I think I'll go with the seasonal "
+    const string option2{""+ playerName +": I think I'll go with the seasonal "
                          "salad. Seems like a refreshing option.\n\n"
                          "Angel: Opting for a fresh, natural option, much like the sustainability efforts we pride ourselves on at UCLA. It's both healthy and environmentally conscious. Impressive decision.\n\n"};
     IncreaseMoodPoints(5);
@@ -264,7 +265,7 @@ cin >> foodChoice;
   }
   case 3: {
     const string option3{
-        ""+ name +" : Maybe I'll indulge a bit and go for the pizza. Comfort "
+        ""+ playerName +" : Maybe I'll indulge a bit and go for the pizza. Comfort "
         "food, right?\n\n"
         "Angel: Gourmet pizza, in a museum café? I usually prefer something a bit more healthy and processed foods are not really my thing. Go ahead though!\n\n"};
     IncreaseMoodPoints(-5);
@@ -284,10 +285,10 @@ cin >> foodChoice;
 
   if (moodPoints >= 15) {
     const string kiss{
-        ""+ name +" : Today was incredible, Angel. I've never seen art and life blend so seamlessly.\n\n"
+        ""+ playerName +" : Today was incredible, Angel. I've never seen art and life blend so seamlessly.\n\n"
         "Angel: I agree. It's rare to find someone who appreciates the depth of these experiences. You... you've made today special.\n\n"
         "Narrator: Angel steps closer, their eyes reflecting the museum's soft lighting, showcasing a mix of vulnerability and the usual confidence.\n"
-        ""+ name +" : Angel, I feel there's something between us... more than just shared interests. "
+        ""+ playerName +" : Angel, I feel there's something between us... more than just shared interests. "
         "\n\n"
         "Angel smiles, a hint of warmth breaking through their usually composed demeanor.\n\n"
         "Angel: I've felt it too. It's like we've connected on a level I didn't expect.\n\n"
@@ -298,7 +299,7 @@ cin >> foodChoice;
   } else if (moodPoints >= 7){
     const string hug{
         "After an engaging day, you both stand at the museum's exit, reluctant to end the shared adventure.\n\n"
-        ""+ name +": Thank you for today, Angel. I've learned so much from you. \n\n "
+        ""+ playerName +": Thank you for today, Angel. I've learned so much from you. \n\n "
         "Angel: And I from you. You've opened my eyes to new perspectives. \n\n "
         "Narrator: There's a pause, filled with unspoken thoughts and feelings. Angel looks at you, a softness in their eyes. \n\n"
         "Angel: Would it be alright if I hugged you? It seems a fitting end to such a memorable day. \n\n"
@@ -308,10 +309,10 @@ cin >> foodChoice;
   else{
     const string rejection{ 
       "Narrator: As you express a desire to deepen the connection, Angel takes a moment before responding, their expression thoughtful and kind. \n"
-      ""+ name +" I've really enjoyed today, Angel. I was hoping we could...\n\n"
+      ""+ playerName +" I've really enjoyed today, Angel. I was hoping we could...\n\n"
       "Angel: You mean a lot to me, but I think our journey is meant to be one of friendship and intellectual companionship. \n\n"
       "Narrator: There's a pause, filled with a mix of disappointment and understanding.\n\n"
-      ""+ name +"I see. I respect your feelings, Angel.\n\n"
+      ""+ playerName +"I see. I respect your feelings, Angel.\n\n"
       "Angel: I truly value what we've shared today. Let's continue to explore this world, side by side, as friends. \n\n"
     };
   }

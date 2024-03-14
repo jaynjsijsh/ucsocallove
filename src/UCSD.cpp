@@ -71,6 +71,7 @@ void UCSD::DisplayCharacterCard() {
   for (int i = 0; i < this->dislikes.size(); i++) {
     std::cout << this->dislikes[i] << ", ";
   }
+  cout << endl;
 }
 
 void UCSD::addLikes(string like) { likes.push_back(like); }
@@ -104,27 +105,27 @@ void UCSD::DisplayCoffeeScene(int drink) {
     switch (drink) {
     case 1: {
       const string drinkChoice1{
-          "\n" + name +" : I got an expresso! \n\n"
+          "\n" + playerName +" : I got an expresso! \n\n"
           " Tris: Espresso embodies a certain boldness, doesn't it? It's direct, potent, a bit too much for me. \n\n"};
       std::cout << SlowTyping(drinkChoice1);
       break;
     }
     case 2: {
       const string drinkChoice2{
-          "\n" + name + ": I got an herbal tea to soothe me.\n\n "
+          "\n" + playerName + ": I got an herbal tea to soothe me.\n\n "
           " Tris: Herbal tea is like a quiet conversation, understated and serene. It's pleasant but forgettable. \n\n"};
       std::cout << SlowTyping(drinkChoice2);
       break;
     }
     case 3: {
-      const string drinkChoice3{"\n" + name + ": I got an iced latte!\n\n "
+      const string drinkChoice3{"\n" + playerName + ": I got an iced latte!\n\n "
       "Tris:  It's an agreeable choice for many, but I find it lacks character.\n\n"};
       std::cout << SlowTyping(drinkChoice3);
       break;
     }
     case 4: {
       const string drinkChoice4{
-          "\n " +name+ ": I got a hot chocolate! \n\n "
+          "\n " +playerName+ ": I got a hot chocolate! \n\n "
           "Tris: Oh, hot chocolate! Now that's what I'm talking about. It's just perfect—warm, sweet, and it makes you feel good. Definitely my go-to drink. It's like getting a cozy hug in a mug!\n\n"};
       std::cout << SlowTyping(drinkChoice4);
       addLikes("Hot Chocolate");
@@ -132,7 +133,7 @@ void UCSD::DisplayCoffeeScene(int drink) {
     }
     case 5: {
       const string drinkChoice5{
-          "\n" + name + ": I got a refreshing fruit smoothie.\n\n "
+          "\n" + playerName + ": I got a refreshing fruit smoothie.\n\n "
           "Tris:  It's an agreeable choice for many, but I find it lacks character.\n\n"};
       std::cout << SlowTyping(drinkChoice5);
       break;
@@ -149,7 +150,7 @@ void UCSD::DisplayBeachScene() {
   const string s{" Traverse the shoreline in search of unique seashells with Tris\n\n"
                 "Narrator: You approach Tris, who's meticulously sorting through seashells by the water's edge."
                 "Their focus is palpable, each shell a testament to the ocean's secret life.\n \n"
-                 + name +": These shells are fascinating. What draws you to them? \n"
+                 + playerName +": These shells are fascinating. What draws you to them? \n"
                  "Tris: Each one tells a story, a snapshot of the ocean's vast ecosystem. \n"
                 "It's the thrill of discovery, of finding order in chaos.\n \n"
                  "1: Ask about their love for diving\n"
@@ -190,7 +191,7 @@ void UCSD::UCSDBigDate() {
   switch (option) {
   case 1: {
     const string option1{
-        "\n" + name + ": The jellyfish exhibit seems otherworldly. Care to drift along with the current for a bit?\n\n "
+        "\n" + playerName + ": The jellyfish exhibit seems otherworldly. Care to drift along with the current for a bit?\n\n "
         "Tris: Yeah, I do. They're like living dreams, aren't they? Ghostly and graceful... I could watch them for hours.\n\n "};
     addLikes("Jellyfish");
     IncreaseMoodPoints(5);
@@ -199,7 +200,7 @@ void UCSD::UCSDBigDate() {
   }
   case 2: {
     const string option2{
-        "\n" + name + ":How about we visit the tropical fish section? The colors and variety seem amazing. \n \n"
+        "\n" + playerName + ":How about we visit the tropical fish section? The colors and variety seem amazing. \n \n"
         "Tris: Sure, I guess it's... visually stimulating. But sometimes, I wonder if they miss the open sea. \n \n"};
     addDislikes("Forced enclosure");
     IncreaseMoodPoints(1);
@@ -208,7 +209,7 @@ void UCSD::UCSDBigDate() {
   }
   case 3: {
     const string option3{
-        "\n" + name + ": Maybe we could catch the dolphin show? It's supposed to be interactive and fun. \n\n"
+        "\n" + playerName + ": Maybe we could catch the dolphin show? It's supposed to be interactive and fun. \n\n"
       "Tris: Hmm, I'm not really into performances. Feels a bit too... cheerful and loud for my taste. \n\n"};
     addDislikes("Interactions");
     IncreaseMoodPoints(-5);
@@ -217,7 +218,7 @@ void UCSD::UCSDBigDate() {
   }
   case 4: {
     const string option4{
-        "\n" + name + ": I'm curious about the deep-sea creatures exhibit. It's a glimpse into an almost alien world.\n\n"
+        "\n" + playerName + ": I'm curious about the deep-sea creatures exhibit. It's a glimpse into an almost alien world.\n\n"
         "Tris: Ah, now that's more my speed. There's something hauntingly beautiful about the creatures that thrive in complete darkness.\n\n"};
     addLikes("Beautiful darkness");
     IncreaseMoodPoints(3);
@@ -250,7 +251,7 @@ cin >> foodChoice;
   switch (foodChoice) {
   case 1: {
     const string option1{
-        "\n" + name + ": I'm thinking about the sushi platter. It looks like an edible form of art.\n\n"
+        "\n" + playerName + ": I'm thinking about the sushi platter. It looks like an edible form of art.\n\n"
         "Tris: Good eye. Sushi is honest food. Simple ingredients, but it's all about the craft. It's... genuine, which is refreshing.\n\n"
         
         "Narrator:The lunch unfolds slowly, each bite and word shared adding another stitch to the fabric"
@@ -262,7 +263,7 @@ cin >> foodChoice;
   }
   case 2: {
     const string option2{
-      "\n" + name + ": How about some miso soup to start? It's soul-warming, and maybe some tempura on the side?\n"
+      "\n" + playerName + ": How about some miso soup to start? It's soul-warming, and maybe some tempura on the side?\n"
       "Tris: Miso is comforting, and tempura? I guess it has its place. Sometimes you need a bit of crunch.\n\n"
       
       "Narrator:The lunch unfolds slowly, each bite and word shared adding another stitch to the fabric"
@@ -274,7 +275,7 @@ cin >> foodChoice;
   }
   case 3: {
     const string option3{
-       "\n" + name + ": The chirashi bowl seems interesting. It's kind of like a treasure box of the sea.\n\n"
+       "\n" + playerName + ": The chirashi bowl seems interesting. It's kind of like a treasure box of the sea.\n\n"
         "Tris: Chirashi? It's a bit... scattered for me. Too many things going on. I prefer when the flavors have space to breathe.\n\n"
 
         "Narrator:The lunch unfolds slowly, each bite and word shared adding another stitch to the fabric"
@@ -299,7 +300,7 @@ cin >> foodChoice;
         "Scotty: Today was... more than I could've asked for. Being with "
         "someone who appreciates the simple things, the beauty of nature... "
         "it's been really special.\n"
-        "Player: I feel the same. It's rare to find someone who you can share "
+        "\n" + playerName + ": I feel the same. It's rare to find someone who you can share "
         "these moments with. Moments that feel genuine and fulfilling.\n"
         "Narrator: Scotty stops, turning to face you, their eyes reflecting "
         "the moonlight. The air is charged with a palpable connection between "
@@ -315,12 +316,12 @@ cin >> foodChoice;
     const string hug{
         "Scotty: You know, I wasn't sure what to expect from today, but I'm "
         "really happy we spent it together. It's been... nice, really nice. \n "
-        "Player: Yeah, I've enjoyed every moment of it. It's been a day full "
+        "\n" + playerName + ": Yeah, I've enjoyed every moment of it. It's been a day full "
         "of simple pleasures and great company. \n Narrator: There's a brief "
         "pause as you both stand there, soaking in the moment. Then, almost "
         "instinctively, you extend your arms towards Scotty. \n\nOffer a hug. "
-        "\nPlayer action: You open your arms, and Scotty steps into a warm "
-        "embrace, a comforting end to the day.\n\nScotty: This hug... it's "
+        "\n*You open your arms, and Scotty steps into a warm "
+        "embrace, a comforting end to the day.*\n\nScotty: This hug... it's "
         "perfect. Thanks for being here, for making today what it was.\n\n"};
     std::cout << SlowTyping(hug);
   }
