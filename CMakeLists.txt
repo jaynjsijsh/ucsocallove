@@ -17,4 +17,4 @@ tests/SlowTypingTest.cpp
 tests/UCSBTest.cpp
 tests/UCRTest.cpp)
 add_executable(runAllTest tests ${TEST_FILES} ${SOURCE_FILES})
-target_link_libraries(runAllTest gtecmake_minimum_required(VERSION 3.20))
+target_link_libraries(runAllTest gtest gtest_main)
