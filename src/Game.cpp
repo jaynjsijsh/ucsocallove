@@ -17,6 +17,33 @@ using namespace std;
 string name;
 string playerName;
 
+// initialize objects after
+int ucrmood = 0;
+vector<string> UCRLikes = {};
+vector<string> UCRDislikes = {};
+UCR Scotty("Scotty", ucrmood, UCRLikes, UCRDislikes, playerName);
+
+
+int ucsbmood = 0;
+vector<string> UCSBLikes = {};
+vector<string> UCSBDislikes = {};
+UCSB Santi("Santi", ucsbmood, UCSBLikes, UCSBDislikes, playerName);
+
+int uclamood = 0;
+vector<string> UCLALikes = {};
+vector<string> UCLADislikes = {};
+UCLA Angel("Angel", uclamood, UCLALikes, UCLADislikes, playerName);
+
+int ucimood = 0;
+vector<string> UCILikes = {};
+vector<string> UCIDislikes = {};
+UCI Peta("Peta", ucimood, UCILikes, UCIDislikes, playerName);
+
+int ucsdmood = 0;
+vector<string> UCSDLikes = {};
+vector<string> UCSDDislikes = {};
+UCSD Tris("Tris", ucsdmood, UCSDLikes, UCSDDislikes, playerName);
+
 // constructor
 Game::Game(){};
 
@@ -75,8 +102,11 @@ void Game::StartGame() {
 
   getline(cin, name); // Use getline to read the entire line, including spaces.
   // this->name = name;
-  playerName = name;
-  cout << playerName << endl;
+  Peta.SetPlayerName(name);
+  Tris.SetPlayerName(name);
+  Angel.SetPlayerName(name);
+  Scotty.SetPlayerName(name);
+  Santi.SetPlayerName(name);
   const string introDialogue2 { "\nNarrator: Wonderful to meet you, " + name
        + ". It's always a pleasure to guide a new face through the twists and "
           "turns of university life.\n"
@@ -87,32 +117,7 @@ void Game::StartGame() {
   return;
 }
 
-// initialize objects after
-int ucrmood = 0;
-vector<string> UCRLikes = {};
-vector<string> UCRDislikes = {};
-UCR Scotty("Scotty", ucrmood, UCRLikes, UCRDislikes, playerName);
 
-
-int ucsbmood = 0;
-vector<string> UCSBLikes = {};
-vector<string> UCSBDislikes = {};
-UCSB Santi("Santi", ucsbmood, UCSBLikes, UCSBDislikes, playerName);
-
-int uclamood = 0;
-vector<string> UCLALikes = {};
-vector<string> UCLADislikes = {};
-UCLA Angel("Angel", uclamood, UCLALikes, UCLADislikes, playerName);
-
-int ucimood = 0;
-vector<string> UCILikes = {};
-vector<string> UCIDislikes = {};
-UCI Peta("Peta", ucimood, UCILikes, UCIDislikes, playerName);
-
-int ucsdmood = 0;
-vector<string> UCSDLikes = {};
-vector<string> UCSDDislikes = {};
-UCSD Tris("Tris", ucsdmood, UCSDLikes, UCSDDislikes, playerName);
 
 
 void Game::PromptSubMenu() {
@@ -227,7 +232,7 @@ void Game::GameDescription() {
 
 void Game::DisplayOrientation() {
   string activity;
-  const string orientation { "\n\nNarrator: Welcome, everyone, to your first day! Today, you'll "
+  const string orientation { "\n[Welcome to Orientation]\n\nNarrator: Welcome, everyone, to your first day! Today, you'll "
           "meet "
           "some remarkable     students, each with their own unique passions "
           "and stories. Let's hear from them directly about   their favorite "
@@ -303,7 +308,7 @@ void Game::DisplayOrientation() {
 
 void Game::CoffeeScene() {
   int drink;
-  const string coffeeDialogue {"Narrator: The aroma of freshly brewed coffee fills the air as you "
+  const string coffeeDialogue {"[At the Coffee Shop]\n\nNarrator: The aroma of freshly brewed coffee fills the air as you "
           "step into the cozy campus coffee shop. It's a bustling hub of "
           "activity, with students from various backgrounds engrossed in "
           "different pursuits. The menu boasts a diverse selection of drinks, "
@@ -373,7 +378,7 @@ void Game::CoffeeScene() {
     break; // Show the menu again for any other input
   }
 
-  const string endDialogue { "\n...\n\nNarrator: As the hours slip by, you find yourself deeply "
+  const string endDialogue { "\n[At the Beach]\n\nNarrator: As the hours slip by, you find yourself deeply "
           "engaged in the activity you've chosen, learning more about your "
           "companion and yourself in the process. The coffee shop has become a "
           "place of connection, reflection, and discovery.\n\n...\n\n"
@@ -554,3 +559,19 @@ void Game::Bonfire() {
   PromptSubMenu();
 }
   
+void Game::FinalScene(){
+  const string f {"\n[The scene begins with the soft glow of dawn filtering through the curtains. The player stirs, the edges of a vivid dream still "
+  "clinging to their consciousness. In that fleeting realm of sleep, they had lived a whirlwind adventure across the University of California campuses, "
+  "their days filled with laughter, challenges, and the warmth of newfound connections.]\n\n"
+
+"Narrator: Our intrepid traveler awakens from a journey that spanned the depths of dreams, where the lines between reality and fantasy blurred. Each "
+"moment, a memory woven from the fabric of 'what if.' But as dawn breaks, so does the spell, returning our hero to a world less colored by the vivid "
+"hues of imagination.\n\n"
+
+"[The player sits up, rubbing the remnants of sleep from their eyes. With a lingering sense of disquiet, they reach for their phone, the gateway to reality "
+"and, perhaps, to the future.]\n\n"
+
+"Narrator: In the quiet of the morning, reality beckons with the promise of news that could change everything. The player, with a heart both hopeful and heavy, "
+"turns to their email, the modern-day scroll of fate, to unveil the path that lies ahead.\n\n Congratulations UC Socal Lover!"};
+cout << SlowTyping(f);
+}

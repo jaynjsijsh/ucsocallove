@@ -36,6 +36,9 @@ string UCI::GetName() {
   return this->name;
 }
 
+void UCI::SetPlayerName(string n){
+  this->playerName = n;
+}
 void UCI::DisplayMoodPoints() {
   if (this->GetMoodPoints() >= 10) {
     cout << "Mood Points: " << this->GetMoodPoints() << endl;
@@ -88,7 +91,7 @@ void UCI::DisplayCoffeeScene(int drink) {
     cout << SlowTyping(coffeeTime);
   }
   else {
-    const string rejection {"Scotty: Interesting... okay, until we meet another day.\n "};
+    const string rejection {"Peta: Interesting... okay, until we meet another day.\n "};
     cout << SlowTyping(rejection);
     IncreaseMoodPoints(-10);
     return;
@@ -105,7 +108,7 @@ void UCI::DisplayCoffeeScene(int drink) {
     }
     case 2: {
       const string drinkChoice2{
-          "\n" + this->playerName + ": I got an herbal tea to soothe me.\n Peta: Iced lattes are alright, not"
+          "\n" + this->playerName + ": I got an herbal tea to soothe me.\n Peta: herbal tea are alright, not "
       "too bad.\n\n"};
       cout << SlowTyping(drinkChoice2);
       this->IncreaseMoodPoints(1);
@@ -150,17 +153,17 @@ void UCI::DisplayBeachScene() {
                  "Peta: I love bringing imagination to life. It's about"
                   "creating something beautiful from the simplest of materials. You know?\n\n"
                  "1: Share your thoughts on the value of volunteering\n"
-                 "2: Criticize their unobtrusive nature"};
+                 "2: Criticize their unobtrusive nature\n"};
   cout << SlowTyping(s);
   cin >> option;
   if (option == 1) {
     addLikes("Volunteering");
-    const string s{"\nPeta: Right!? Volunteering is what makes communities thrive. Why expect"
+    const string s{"\nPeta: Right!? Volunteering is what makes communities thrive. Why expect "
     "the good to automatically appear when you don't contribute to the good as well?\n"};
     cout << SlowTyping(s);
   } else if (option == 2) {
     addDislikes("Conflict-ridden situations");
-    const string s{"\nScotty: Well So-rry you don't even want to the bare minimum of effort"
+    const string s{"\nPeta: Well So-rry you don't even want to the bare minimum of effort "
     "to not bother people. -_-\n"};
     cout << SlowTyping(s);
   } else {
@@ -203,7 +206,7 @@ void UCI::PetaBigDate() {
   }
   case 3: {
     const string option3{
-        "\n" +playerName + ":I only brought cheese and crackers. Is that alright?\n"
+        "\n" +playerName + ": I only brought cheese and crackers. Is that alright?\n"
         "Peta: Classic and elegant, I like your style! It's the simple things that make life beautiful, isn't it?\n\n"};
     IncreaseMoodPoints(1);
     cout << SlowTyping(option3);
@@ -211,7 +214,7 @@ void UCI::PetaBigDate() {
   }
   case 4: {
     const string option4{
-        "\n" +playerName + "I brought Homemade Lemonade!\n"
+        "\n" +playerName + ": I brought Homemade Lemonade!\n"
         "Peta: Nothing beats homemade lemonade on a sunny day. But like, where's the food....\n"};
     IncreaseMoodPoints(-3);
     cout << SlowTyping(option4);
@@ -228,11 +231,11 @@ void UCI::PetaBigDate() {
     int activity;
   const string activtyOptions{
     "Narrator: As you enjoy your picnic, conversation flows freely. Peta shares stories of "
-    "their passions and dreams, and you find yourself drawn into their world of empathy and creativity.\n"
-     "The afternoon slips away in a blend of laughter, shared stories, and a growing connection.\n\n"
-      "After enjoying your chosen picnic treats, Peta looks at you with a spark of inspiration. \n"
+    "their passions and dreams, and you find yourself drawn into their world of empathy and creativity."
+     "The afternoon slips away in a blend of laughter, shared stories, and a growing connection."
+      "After enjoying your chosen picnic treats, Peta looks at you with a spark of inspiration. \n\n"
 "Peta: I brought something special for us to do together. What do you think about writing a short poem or story?"
-   "\n. We can draw inspiration from our surroundings and how we're feeling right now.\n\n"
+   "We can draw inspiration from our surroundings and how we're feeling right now.\n\n"
 
       "1.Write a Poem Together\n"
       "2.Write a Short Story Together\n"
@@ -273,15 +276,15 @@ cin >> activity;
       "Narrator: Whether you choose to write together or simply enjoy the moment, "
       "Peta's gentle enthusiasm and creative spirit make the day truly special."
       " The activity brings you closer, highlighting the depth of your connection\n\n"};
-
+  cout << SlowTyping(evening);
   if (GetMoodPoints() >= 15) {
     const string kiss{
         "As the sun sets, casting a soft glow over the park, "
         "you and Peta finish your creative writing activity. "
-        "Peta looks at you, eyes shining with a mix of admiration and affection.\n"
+        "Peta looks at you, eyes shining with a mix of admiration and affection.\n\n"
 
         "Peta: Today was beautiful. Sharing this creative space with you... it's been a highlight for me.\n"
-        + playerName + ": I feel the same, Peta. There's something special about today.. about us."
+        + playerName + ": I feel the same, Peta. There's something special about today.. about us.\n\n"
 
         "Narrator: Leaning in slowly, checking for any hesitation, you both share a tender, "
          "heartfelt kiss. It's a perfect reflection of the day's intimacy and the deep connection"
@@ -310,7 +313,7 @@ cin >> activity;
   }
 
   const string lastScene{
-      "Narrator: The gesture cements a day of shared experiences and mutual "
+      "\nNarrator: The gesture cements a day of shared experiences and mutual "
       "affection. As you part ways, you feel a promise in the air, a hint of "
       "more days like this to come.\n"};
   cout << SlowTyping(lastScene);

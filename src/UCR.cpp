@@ -35,7 +35,9 @@ vector<string> UCR::GetDislikes(){
 string UCR::GetName() {
   return this->name;
 }
-//void UCR::UpdateCharacterCard() {}
+void UCR::SetPlayerName(string n){
+  this->playerName = n;
+}
 
 void UCR::DisplayMoodPoints() {
   if (this->GetMoodPoints() >= 10) {
@@ -108,35 +110,37 @@ void UCR::DisplayCoffeeScene(int drink) {
     switch (drink) {
     case 1: {
       const string drinkChoice1{
-          "\n" + playerName +" : I got an expresso! \n Scotty: I hate the bitterness of a raw espresso!!\n\n"};
+          "\n" + playerName +" : I got an expresso! \nScotty: I hate the bitterness of a raw espresso!!\n\n"};
       cout << SlowTyping(drinkChoice1);
       IncreaseMoodPoints(-2);
+      addDislikes("bitter, raw espresso");
       break;
     }
     case 2: {
       const string drinkChoice2{
-          "\n" + playerName + ": I got an herbal tea to soothe me.\n Scotty: Ohh a soothing herbal tea is fine ig...\n\n"};
+          "\n" + playerName + ": I got an herbal tea to soothe me.\nScotty: Ohh a soothing herbal tea is fine ig...\n\n"};
       cout << SlowTyping(drinkChoice2);
       IncreaseMoodPoints(-1);
       break;
     }
     case 3: {
-      const string drinkChoice3{"\n" + playerName + ": I got an iced latte!\n Scotty: Omgmg I LOVEEEE iced Lattes.\n\n"};
+      const string drinkChoice3{"\n" + playerName + ": I got an iced latte!\nScotty: Omgmg I LOVEEEE iced Lattes.\n\n"};
       cout << SlowTyping(drinkChoice3);
       addLikes("lattes");
       break;
     }
     case 4: {
       const string drinkChoice4{
-          "\n " +playerName+ ": I got a hot chocolate! \n Scotty: Hot chocolate is nice in the winter...\n\n"};
+          "\n " +playerName+ ": I got a hot chocolate! \nScotty: Hot chocolate is nice in the winter...\n\n"};
       cout << SlowTyping(drinkChoice4);
       IncreaseMoodPoints(-1);
       break;
     }
     case 5: {
       const string drinkChoice5{
-          "\n" + playerName + ": I got a refreshing fruit smoothie.\n Scotty: Fruit smoothies are a no-go. I only really like caffine.\n\n"};
+          "\n" + playerName + ": I got a refreshing fruit smoothie.\nScotty: Fruit smoothies are a no-go. I only really like caffeine.\n\n"};
       cout << SlowTyping(drinkChoice5);
+      addDislikes("fruits");
       IncreaseMoodPoints(-2);
       break;
     }
@@ -258,6 +262,7 @@ void UCR::ScottyBigDate() {
       "bread.\n"
       "2.Grilled chicken salad with a side of fresh fruit.\n"
       "3.A classic cheeseburger with a side of seasoned fries.\n"};
+      cout << SlowTyping(food);
 cin >> foodChoice;
   switch (foodChoice) {
   case 1: {
@@ -285,10 +290,7 @@ cin >> foodChoice;
         "food, right?\n"
         "Scotty (negative): Ah, I usually prefer something a bit more in tune "
         "with nature. Processed foods don't really resonate with me, but go "
-        "ahead and enjoy!\n\n"
-        "Narrator: As you both enjoy your chosen meals, the conversation flows "
-        "easily. Scotty's enthusiasm for local produce and a connection to "
-        "nature becomes even more apparent, deepening the bond between you.\n"};
+        "ahead and enjoy!\n\n"};
     IncreaseMoodPoints(-5);
     cout << SlowTyping(option3);
     break;

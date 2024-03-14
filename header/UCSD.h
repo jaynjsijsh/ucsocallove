@@ -19,6 +19,7 @@ public:
   vector<string> GetDislikes();
   string GetName();
     int GetMoodPoints();
+    void SetPlayerName(string n);
   void DisplayMoodPoints();
   void IncreaseMoodPoints(int mPoints);
   void DisplayCharacterCard();

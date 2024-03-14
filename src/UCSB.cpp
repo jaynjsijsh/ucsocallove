@@ -38,6 +38,9 @@ string UCSB::GetName() {
   return this->name;
 }
 
+void UCSB::SetPlayerName(string n){
+  this->playerName = n;
+}
 void UCSB::DisplayMoodPoints() {
   if (this->GetMoodPoints() >= 10) {
     cout << "Mood Points: " << this->GetMoodPoints() << endl;
@@ -103,23 +106,28 @@ void UCSB::DisplayCoffeeScene(int drink) {
       const string drinkChoice1{
           "\n" + name +" : I got an expresso! \n Santi: I hate the bitterness of a raw espresso!!\n\n"};
       cout << SlowTyping(drinkChoice1);
+      addDislikes("raw espresso");
+      IncreaseMoodPoints(-5);
       break;
     }
     case 2: {
       const string drinkChoice2{
           "\n" + name + ": I got an herbal tea to soothe me.\n Santi: A soothing herbal tea always helps to calm me.\n\n"};
       cout << SlowTyping(drinkChoice2);
+      IncreaseMoodPoints(2);
       break;
     }
     case 3: {
       const string drinkChoice3{"\n" + name + ": I got an iced latte!\n Santi: I'm not really a big fan of caffeine\n\n"};
       cout << SlowTyping(drinkChoice3);
+      IncreaseMoodPoints(-5);
       break;
     }
     case 4: {
       const string drinkChoice4{
           "\n " +name+ ": I got a hot chocolate! \n Santi: Hot chocolate is nice in the winter...\n\n"};
       cout << SlowTyping(drinkChoice4);
+      IncreaseMoodPoints(1);
       break;
     }
     case 5: {
@@ -127,6 +135,7 @@ void UCSB::DisplayCoffeeScene(int drink) {
           "\n" + name + ": I got a refreshing fruit smoothie.\n Santi: Fruit smoothies are my fave! I always go for the tropical ones.\n\n"};
       cout << SlowTyping(drinkChoice5);
       addLikes("Fruit smoothies");
+      IncreaseMoodPoints(10);
       break;
     }
     default:
@@ -150,10 +159,12 @@ void UCSB::DisplayBeachScene() {
     addLikes("Parties");
     const string s{"\nSanti: Partying is one of my favorite activities!!\n"};
     cout << SlowTyping(s);
+    IncreaseMoodPoints(7);
   } else if (option == 2) {
     addLikes("Parties");
     const string s{"\nSanti: oh.....\n"};
     cout << SlowTyping(s);
+    IncreaseMoodPoints(-7);
   } else {
     // u dont learn shti
   }
@@ -202,7 +213,7 @@ void UCSB::SantiBigDate() {
         "\n" + playerName + ": How about watching the sunset?\nSanti: um... I'm more for something active but I guess we can watch"
         "the sunset if thats what you enjoy.\n Although you enjoy watching the sun set, you see Santi frowning through the corner of your eye.\n\n"};
     IncreaseMoodPoints(-3);
-    addDislikes("inactivity");
+    addDislikes("being a bum");
     cout << SlowTyping(option3);
     break;
   }
@@ -237,14 +248,16 @@ cin >> foodChoice;
         "catch. Can't get more Santa Barbara than this\n\n"};
     IncreaseMoodPoints(5);
     cout << SlowTyping(option1);
+    addLikes("raw taste of the ocean");
     break;
   }
   case 2: {
     const string option2{"\n" + playerName + ": I think I'll go with the vegetable skewers "
                          "salad. Seems like a refreshing option.\n"
-                         "Santi: ugh I'm not a fan of vegetables.\n\n"};
+                         "Santi: ugh I have never eaten a veggie because they are so scary :s\n\n"};
     IncreaseMoodPoints(3);
     cout << SlowTyping(option2);
+    addDislikes("natural fear of vegetables");
     break;
   }
   case 3: {
@@ -254,6 +267,7 @@ cin >> foodChoice;
         "Santi: Now you're speaking my language! These ribs are a local favorite, "
         "slow-cooked to perfection. Get ready for a flavor explosion!\n\n"};
     IncreaseMoodPoints(10);
+    addLikes("ribs");
     cout << SlowTyping(option3);
     break;
   }
@@ -300,6 +314,6 @@ cin >> foodChoice;
   const string lastScene{
       "Narrator: The gesture cements a day of shared experiences and mutual "
       "affection. As you part ways, you feel a promise in the air, a hint of "
-      "more days like this to come.\n"};
+      "more days like this to come...hopefully.\n"};
   cout << SlowTyping(lastScene);
 }

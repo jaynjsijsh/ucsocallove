@@ -17,5 +17,6 @@ int main() {
   game.DisplayIntroMenu();
   game.DisplayOrientation();
   game.CoffeeScene();
+  game.FinalScene();
  return 0;
 }

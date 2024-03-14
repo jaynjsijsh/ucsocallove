@@ -35,6 +35,10 @@ vector<string> UCLA::GetDislikes(){
 string UCLA::GetName() {
   return this->name;
 }
+
+void UCLA::SetPlayerName(string n){
+  this->playerName = n;
+}
 void UCLA::DisplayMoodPoints() {
   if (this->GetMoodPoints() >= 10) {
     cout << "Mood Points: " << this->GetMoodPoints() << endl;
@@ -105,7 +109,7 @@ void UCLA::DisplayCoffeeScene(int drink) {
     }
     case 2: {
       const string drinkChoice2{
-          "\n" + playerName + ": I got an herbal tea to soothe me.\n Angel: Oh that's cool! You can't go wrong with herbal tea...\n\n"};
+          "\n" + playerName + ": I got an herbal tea to soothe me.\n Angel: Only the lower class drink herbal teas. Personally, I only drink high end earl grey.\n\n"};
       cout << SlowTyping(drinkChoice2);
       IncreaseMoodPoints(1);
       break;
@@ -118,18 +122,18 @@ void UCLA::DisplayCoffeeScene(int drink) {
     }
     case 4: {
       const string drinkChoice4{
-          "\n " +playerName+ ": I got a hot chocolate! \n Angel: Hot chocolate? But it's not even winter?!\n\n"};
+          "\n " +playerName+ ": I got a hot chocolate! \n Angel: Are you a child?!\n\n"};
       cout << SlowTyping(drinkChoice4);
-      addDislikes("hot chocolate in any season except winter");
-      IncreaseMoodPoints(-2);
+      addDislikes("children");
+      IncreaseMoodPoints(-3);
       break;
     }
     case 5: {
       const string drinkChoice5{
-          "\n" + playerName + ": I got a refreshing fruit smoothie.\n Angel: Ohhh interesting! Not a big fan of those :|\n\n"};
+          "\n" + playerName + ": I got a refreshing fruit smoothie.\n Angel: Personally, because I am so boujee, I don't eat fruits :|\n\n"};
       cout << SlowTyping(drinkChoice5);
-      //addDislikes("fruit smoothies cause its basic");
-      IncreaseMoodPoints(-1);
+      addDislikes("fruit smoothies cause its basic");
+      IncreaseMoodPoints(-3);
       break;
     }
     default:
@@ -156,7 +160,7 @@ void UCLA::DisplayBeachScene() {
     cout << SlowTyping(s);
   } else if (option == 2) {
     addLikes("Music Festivals");
-    const string s{"\nAngel: I see... well I don't necessarily agree... \n"};
+    const string s{"\nAngel: I see... well... I don't necessarily agree... \n"};
     cout << SlowTyping(s);
   } else {
     // u dont learn shti
@@ -254,6 +258,7 @@ cin >> foodChoice;
         "Angel: Oh, great choice! I'm a big fan of sandwiches too\n\n"};
     IncreaseMoodPoints(2);
     cout << SlowTyping(option1);
+    addLikes("yummy sandwiches");
     break;
   }
   case 2: {
@@ -262,15 +267,17 @@ cin >> foodChoice;
                          "Angel: Opting for a fresh, natural option, much like the sustainability efforts we pride ourselves on at UCLA. It's both healthy and environmentally conscious. Impressive decision.\n\n"};
     IncreaseMoodPoints(5);
     cout << SlowTyping(option2);
+    addLikes("refreshing salads");
     break;
   }
   case 3: {
     const string option3{
         ""+ playerName +" : Maybe I'll indulge a bit and go for the pizza. Comfort "
         "food, right?\n\n"
-        "Angel: Gourmet pizza, in a museum café? I usually prefer something a bit more healthy and processed foods are not really my thing. Go ahead though!\n\n"};
+        "Angel: Gourmet pizza, in a museum café? Personally, I don't go for such unhealthy choices but if that's who you are... :/\n\n"};
     IncreaseMoodPoints(-5);
     cout << SlowTyping(option3);
+    addDislikes("grease");
     break;
   }
   default:
@@ -296,7 +303,7 @@ cin >> foodChoice;
         "Leaning in, the space between you diminishes until your lips meet. The kiss is soft, tentative at first, but grows more confident, "
         "mirroring the passion of the art that surrounds you. It's a moment of shared vulnerability and understanding, a promise of future explorations, "
         "both personal and intellectual.\n\n"};
-    std::cout << SlowTyping(kiss);
+    cout << SlowTyping(kiss);
   } else if (moodPoints >= 7){
     const string hug{
         "After an engaging day, you both stand at the museum's exit, reluctant to end the shared adventure.\n\n"
@@ -316,10 +323,11 @@ cin >> foodChoice;
       ""+ playerName +"I see. I respect your feelings, Angel.\n\n"
       "Angel: I truly value what we've shared today. Let's continue to explore this world, side by side, as friends. \n\n"
     };
+    cout << SlowTyping(rejection);
   }
 
   const string lastScene{
-      "Narrator: Though not the outcome you hoped for, there's a mutual respect and a promise of future adventures, albeit on different terms. \n\n"};
+      "Do you feel the love in the air? \n\n"};
   cout << SlowTyping(lastScene);
 }
 

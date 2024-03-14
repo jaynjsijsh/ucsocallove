@@ -20,7 +20,7 @@ public:
   vector<string> GetLikes();
   vector<string> GetDislikes();
   string GetName();
-  //void UpdateCharacterCard();
+  void SetPlayerName(string n);
   void DisplayMoodPoints();
   void IncreaseMoodPoints(int mPoints);
   void DisplayCharacterCard();

@@ -40,6 +40,9 @@ string UCSD::GetName() {
   return this->name;
 }
 
+void UCSD::SetPlayerName(string n){
+  this->playerName = n;
+}
 int UCSD::GetMoodPoints(){return this->moodPoints;}
 
 void UCSD::DisplayMoodPoints() {
@@ -96,7 +99,7 @@ void UCSD::DisplayCoffeeScene(int drink) {
     std::cout << SlowTyping(coffeeTime);
   }
   else {
-    const string rejection {"Tris: Oh... okay, I understand. Maybe next time.\n "};
+    const string rejection {"Tris: Oh... okay, I understand. You're a bum.\n "};
     std::cout << SlowTyping(rejection);
     IncreaseMoodPoints(-10);
     return;
@@ -163,7 +166,7 @@ void UCSD::DisplayBeachScene() {
     std::cout << SlowTyping(s);
   } else if (option == 2) {
     addLikes("Diving");
-    const string s{"\nTris: Hmm, I prefer the quiet. Crowds tend to distract from the beauty here. Let’s stay and explore more, there's a lot to see just around us.\n\n"};
+    const string s{"\nTris: Hmm, I prefer the quiet. I hate seeing people.\n\n"};
     std::cout << SlowTyping(s);
   } else {
     // u dont learn shti
@@ -200,7 +203,7 @@ void UCSD::UCSDBigDate() {
   }
   case 2: {
     const string option2{
-        "\n" + playerName + ":How about we visit the tropical fish section? The colors and variety seem amazing. \n \n"
+        "\n" + playerName + ": How about we visit the tropical fish section? The colors and variety seem amazing. \n \n"
         "Tris: Sure, I guess it's... visually stimulating. But sometimes, I wonder if they miss the open sea. \n \n"};
     addDislikes("Forced enclosure");
     IncreaseMoodPoints(1);
@@ -247,6 +250,7 @@ void UCSD::UCSDBigDate() {
       "1.An elegantly arranged sushi platter \n"
       "2.A warming bowl of miso soup with a side of tempura \n"
       "3.A lavish chirashi bowl, a colorful array of fish on a bed of sushi rice.\n"};
+      cout << SlowTyping(food);
 cin >> foodChoice;
   switch (foodChoice) {
   case 1: {
@@ -294,34 +298,35 @@ cin >> foodChoice;
       "Narrator: As the evening unfolds, a quiet stroll with Tris through the beach feels "
       " like the world is holding its breath. The moon casts a gentle glow on the path ahead, revealing"
       " the night's serene beauty—a fitting end to a day that has been both engaging and introspective.\n\n"};
+      cout << SlowTyping(evening);
 
   if (moodPoints >= 15) {
     const string kiss{
-        "Scotty: Today was... more than I could've asked for. Being with "
+        "Tris: Today was... more than I could've asked for. Being with "
         "someone who appreciates the simple things, the beauty of nature... "
         "it's been really special.\n"
         "\n" + playerName + ": I feel the same. It's rare to find someone who you can share "
         "these moments with. Moments that feel genuine and fulfilling.\n"
-        "Narrator: Scotty stops, turning to face you, their eyes reflecting "
+        "Narrator: Tris stops, turning to face you, their eyes reflecting "
         "the moonlight. The air is charged with a palpable connection between "
         "you two.\n"
-        "Scotty: I'm really glad we did this. You... you've made today "
+        "Tris: I'm really glad we did this. You... you've made today "
         "memorable in ways I can't fully express.\n\n"
-        "* Gently, you lean in and place a soft kiss on Scotty's cheek, a "
+        "* Gently, you lean in and place a soft kiss on Tris's cheek, a "
         "silent thank you for the day *\n\n"
-        "Scotty: Wow, that... that was really sweet. Thank you for today. It "
+        "Tris: Wow, that... that was really sweet. Thank you for today. It "
         "means a lot to me."};
     std::cout << SlowTyping(kiss);
   } else if (moodPoints <= 7) {
     const string hug{
-        "Scotty: You know, I wasn't sure what to expect from today, but I'm "
+        "Tris: You know, I wasn't sure what to expect from today, but I'm "
         "really happy we spent it together. It's been... nice, really nice. \n "
         "\n" + playerName + ": Yeah, I've enjoyed every moment of it. It's been a day full "
         "of simple pleasures and great company. \n Narrator: There's a brief "
         "pause as you both stand there, soaking in the moment. Then, almost "
-        "instinctively, you extend your arms towards Scotty. \n\nOffer a hug. "
-        "\n*You open your arms, and Scotty steps into a warm "
-        "embrace, a comforting end to the day.*\n\nScotty: This hug... it's "
+        "instinctively, you extend your arms towards Tris. \n\nOffer a hug. "
+        "\n*You open your arms, and Tris steps into a warm "
+        "embrace, a comforting end to the day.*\n\nTris: This hug... it's "
         "perfect. Thanks for being here, for making today what it was.\n\n"};
     std::cout << SlowTyping(hug);
   }
