@@ -78,6 +78,7 @@
 
  ## Installation/Usage
  > Instructions on installing and running your application
+ > To run our code, you must run the following commands: "cmake .", "make" and "run ./main". Once you do this, the rest of the commands depend on the user but will be prompted by the game, "1. option 1", "2. option 2". 
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
 ![alt text](image-5.png) 
