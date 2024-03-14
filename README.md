@@ -78,5 +78,5 @@
  > Instructions on installing and running your application
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
- ![alt text](<Screenshot 2024-03-13 220758.png>)
- ![alt text](<Screenshot 2024-03-13 220806.png>)
+![alt text](<Screenshot 2024-03-13 220758-1.png>)
+![alt text](<Screenshot 2024-03-13 220806-1.png>)
