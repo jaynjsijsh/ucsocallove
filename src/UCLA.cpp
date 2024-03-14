@@ -98,7 +98,7 @@ void UCLA::DisplayCoffeeScene(int drink) {
       const string drinkChoice1{
           "\n" + name +" : I got an expresso! \n Angel: I love a good espresso!! It's great that we have so much alike!\n\n"};
       cout << SlowTyping(drinkChoice1);
-      IncreaseMoodPoints(3);
+      //IncreaseMoodPoints(3);
       addLikes("expresso");
       break;
     }
@@ -127,7 +127,7 @@ void UCLA::DisplayCoffeeScene(int drink) {
       const string drinkChoice5{
           "\n" + name + ": I got a refreshing fruit smoothie.\n Angel: Ohhh interesting! Not a big fan of those :|\n\n"};
       cout << SlowTyping(drinkChoice5);
-      addDislikes("fruit smoothies cause its basic");
+      //addDislikes("fruit smoothies cause its basic");
       IncreaseMoodPoints(-1);
       break;
     }

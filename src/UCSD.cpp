@@ -29,11 +29,11 @@ UCSD::~UCSD() {
 }
 
 vector<string> UCSD::GetLikes() {
-  return {"dlkjfdl"};
+  return {this->likes};
 }
 
 vector<string> UCSD::GetDislikes(){
-  return {"this->dislikes"};
+  return {this->dislikes};
 }
 
 string UCSD::GetName() {
@@ -104,31 +104,36 @@ void UCSD::DisplayCoffeeScene(int drink) {
     switch (drink) {
     case 1: {
       const string drinkChoice1{
-          "\n" + name +" : I got an expresso! \n Tris: Espresso embodies a certain boldness, doesn't it? It's direct, potent, a bit too much for me. \n\n"};
+          "\n" + name +" : I got an expresso! \n\n"
+          " Tris: Espresso embodies a certain boldness, doesn't it? It's direct, potent, a bit too much for me. \n\n"};
       std::cout << SlowTyping(drinkChoice1);
       break;
     }
     case 2: {
       const string drinkChoice2{
-          "\n" + name + ": I got an herbal tea to soothe me.\n Tris: Herbal tea is like a quiet conversation, understated and serene. It's pleasant but forgettable. \n\n"};
+          "\n" + name + ": I got an herbal tea to soothe me.\n\n "
+          " Tris: Herbal tea is like a quiet conversation, understated and serene. It's pleasant but forgettable. \n\n"};
       std::cout << SlowTyping(drinkChoice2);
       break;
     }
     case 3: {
-      const string drinkChoice3{"\n" + name + ": I got an iced latte!\n Tris:  It's an agreeable choice for many, but I find it lacks character.\n\n"};
+      const string drinkChoice3{"\n" + name + ": I got an iced latte!\n\n "
+      "Tris:  It's an agreeable choice for many, but I find it lacks character.\n\n"};
       std::cout << SlowTyping(drinkChoice3);
       break;
     }
     case 4: {
       const string drinkChoice4{
-          "\n " +name+ ": I got a hot chocolate! \n Tris: Oh, hot chocolate! Now that's what I'm talking about. It's just perfect—warm, sweet, and it makes you feel good. Definitely my go-to drink. It's like getting a cozy hug in a mug!\n\n"};
+          "\n " +name+ ": I got a hot chocolate! \n\n "
+          "Tris: Oh, hot chocolate! Now that's what I'm talking about. It's just perfect—warm, sweet, and it makes you feel good. Definitely my go-to drink. It's like getting a cozy hug in a mug!\n\n"};
       std::cout << SlowTyping(drinkChoice4);
       addLikes("Hot Chocolate");
       break;
     }
     case 5: {
       const string drinkChoice5{
-          "\n" + name + ": I got a refreshing fruit smoothie.\n Tris:  It's an agreeable choice for many, but I find it lacks character.\n\n"};
+          "\n" + name + ": I got a refreshing fruit smoothie.\n\n "
+          "Tris:  It's an agreeable choice for many, but I find it lacks character.\n\n"};
       std::cout << SlowTyping(drinkChoice5);
       break;
     }

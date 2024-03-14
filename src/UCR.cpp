@@ -109,12 +109,14 @@ void UCR::DisplayCoffeeScene(int drink) {
       const string drinkChoice1{
           "\n" + name +" : I got an expresso! \n Scotty: I hate the bitterness of a raw espresso!!\n\n"};
       cout << SlowTyping(drinkChoice1);
+      IncreaseMoodPoints(-2);
       break;
     }
     case 2: {
       const string drinkChoice2{
           "\n" + name + ": I got an herbal tea to soothe me.\n Scotty: Ohh a soothing herbal tea is fine ig...\n\n"};
       cout << SlowTyping(drinkChoice2);
+      IncreaseMoodPoints(-1);
       break;
     }
     case 3: {
@@ -127,12 +129,14 @@ void UCR::DisplayCoffeeScene(int drink) {
       const string drinkChoice4{
           "\n " +name+ ": I got a hot chocolate! \n Scotty: Hot chocolate is nice in the winter...\n\n"};
       cout << SlowTyping(drinkChoice4);
+      IncreaseMoodPoints(-1);
       break;
     }
     case 5: {
       const string drinkChoice5{
           "\n" + name + ": I got a refreshing fruit smoothie.\n Scotty: Fruit smoothies are a no-go. I only really like caffine.\n\n"};
       cout << SlowTyping(drinkChoice5);
+      IncreaseMoodPoints(-2);
       break;
     }
     default:
