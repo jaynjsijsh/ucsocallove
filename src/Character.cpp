@@ -19,7 +19,7 @@ Character::Character(string name, int moodPoints, vector<string> likes, vector<s
 
 Character::~Character(){}
 
-int Character::GetMoodPoints(){
-  return moodPoints;
-}
+// int Character::GetMoodPoints(){
+//   return moodPoints;
+// }
 

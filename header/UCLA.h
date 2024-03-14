@@ -1,26 +1,22 @@
-#ifndef UCR_H
-#define UCR_H
-#include "../header/Character.h"
+#ifndef UCLA_H
+#define UCLA_H
+
 #include <iostream>
-
 using namespace std;
+#include "../header/Character.h"
 
-
-
-class UCR : public Character {
+class UCLA : public Character {
 private:
-  //something ucr only has??
-  int moodPoints;
+int moodPoints;
 public: 
-  //UCR();
-  UCR(string name, int moodPoints, vector<string> likes, vector<string> dislikes, string playerName);
-  
+  UCLA(string name, int moodPoints, vector<string> likes, vector<string> dislikes, string playerName);
+
   int GetMoodPoints();
-  ~UCR();
+  ~UCLA();
   vector<string> GetLikes();
   vector<string> GetDislikes();
   string GetName();
-  //void UpdateCharacterCard();
+
   void DisplayMoodPoints();
   void IncreaseMoodPoints(int mPoints);
   void DisplayCharacterCard();
@@ -28,7 +24,8 @@ public:
   void addDislikes(string dislike);
   void DisplayCoffeeScene(int drink);
   void DisplayBeachScene();
-  void ScottyBigDate();
+  void AngelBigDate();
+
 
 };
 

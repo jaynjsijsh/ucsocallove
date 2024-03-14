@@ -49,4 +49,8 @@
         "typeinfo": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
+}{
+    "files.associations": {
+        "iostream": "cpp"
+    }
 }

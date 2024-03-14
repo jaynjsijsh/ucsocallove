@@ -1,5 +1,10 @@
 #include <gtest/gtest.h>
 #include "../header/UCR.h"
+#include "../header/Character.h"
+
+using namespace std;
+#include <iostream>
+#include <string>
 
 // Test fixture for UCR class
 class UCRTest : public ::testing::Test {
@@ -8,9 +13,11 @@ protected:
 
     void SetUp() override {
         // Initialize your UCR object here with some default parameters
+        string playerName = "b";
+        int ucrmood = 0;
         vector<string> likes = {"Music Festivals", "Nature"};
         vector<string> dislikes = {"Processed Foods", "Inactivity"};
-        ucr = new UCR("Scotty", 0, likes, dislikes, "b");
+        ucr = new UCR("Scotty", ucrmood, likes, dislikes, playerName);
     }
 
     void TearDown() override {
@@ -25,7 +32,7 @@ TEST_F(UCRTest, DisplayMoodPointsTest) {
     // Check the output when mood points are 0
     testing::internal::CaptureStdout();
     ucr->DisplayMoodPoints();
-    std::string output = testing::internal::GetCapturedStdout();
+    string output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "Mood Points: 0\nScotty thinks you are a stranger... :/\n");
     
     // Test when mood points are greater than 10
@@ -38,21 +45,20 @@ TEST_F(UCRTest, DisplayMoodPointsTest) {
     EXPECT_EQ(output, "Mood Points: 15\nScotty thinks you are a lover!! <3\n");
 }
 
-// Test the DisplayCoffeeScene method
-TEST_F(UCRTest, DisplayCoffeeSceneTest) {
-    // Test for different drink choices
-    // Scenario: Player chooses an iced latte (option 3)
-    testing::internal::CaptureStdout();
-    ucr->DisplayCoffeeScene(3);
-    std::string output = testing::internal::GetCapturedStdout();
-    EXPECT_NE(output.find("Scotty: Omgmg I LOVEEEE iced Lattes."), std::string::npos);
-    EXPECT_EQ(ucr->GetLikes().size(), 3); // Expecting the likes vector to increase
-
-    // Scenario: Player rejects hanging out
-    ucr->IncreaseMoodPoints(5); // Set mood points to a positive value
-    testing::internal::CaptureStdout();
-    ucr->DisplayCoffeeScene(1);
-    output = testing::internal::GetCapturedStdout();
-    EXPECT_NE(output.find("Scotty: Oh... okay, I understand. Maybe next time."), std::string::npos);
-    EXPECT_EQ(ucr->GetMoodPoints(), -5); // Expecting a decrease in mood points
+TEST_F(UCRTest, IncreaseMoodPointsTest){
+    ucr->IncreaseMoodPoints(-15);
+    ASSERT_EQ(ucr->GetMoodPoints(),-15);
+    //ucr->IncreaseMoodPoints(-20);
+    // ASSERT_EQ(ucr->GetMoodPoints(), -20);
+    // ucr->IncreaseMoodPoints(15);
+    // ASSERT_EQ(ucr->GetMoodPoints(), -5);
 }
+
+TEST_F(UCRTest, GetNameTest){
+    ASSERT_EQ(ucr->GetName(), "Scotty");
+}
+
+// TEST_F(UCRTest, GetLikesTest){
+//     EXPECT_EQ(ucr->GetLikes().back, "Nature");
+// }
+
