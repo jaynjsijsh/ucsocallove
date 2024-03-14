@@ -1,4 +1,4 @@
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 #include "../header/SlowTyping.h"
 #include <sstream>
 #include <iostream>
