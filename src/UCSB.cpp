@@ -239,7 +239,7 @@ cin >> foodChoice;
     break;
   }
   case 2: {
-    const string option2{"Player: I think I'll go with the vegetable skewers "
+    const string option2{"\n" + name + ": I think I'll go with the vegetable skewers "
                          "salad. Seems like a refreshing option.\n"
                          "Santi: ugh I'm not a fan of vegetables.\n\n"};
     IncreaseMoodPoints(3);
@@ -248,7 +248,7 @@ cin >> foodChoice;
   }
   case 3: {
     const string option3{
-        "Player: Maybe I'll indulge a bit and go for the ribs. Comfort "
+        "\n" + name + ": Maybe I'll indulge a bit and go for the ribs. Comfort "
         "food, right?\n"
         "Santi: Now you're speaking my language! These ribs are a local favorite, "
         "slow-cooked to perfection. Get ready for a flavor explosion!\n\n"};

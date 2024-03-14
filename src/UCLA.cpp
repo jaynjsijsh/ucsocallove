@@ -75,14 +75,14 @@ void UCLA::DisplayCoffeeScene(int drink) {
   int option;
   const string angelScene{
       "\nWith Angel: You join Angel at a table laden with notes and laptops. Strategy is key, both in games and projects they say "
-      "offering to share their insights on leadership and teamwork. Would you like "
+      "offering to share their insights on leadership and teamwork.\n\n Would you like "
       "to hang out with them? (1 for yes, any other input is no)\n\n"};
   cout << SlowTyping(angelScene);
   cin >> option;
   if (option == 1) {
     IncreaseMoodPoints(7);
     const string coffeeTime{
-        "\nThanks for hanging out with me\n What drink did you get from here?\n"};
+        "\nThanks for hanging out with me\n\n What drink did you get from here?\n"};
     cout << SlowTyping(coffeeTime);
   }
   else {
@@ -282,7 +282,7 @@ cin >> foodChoice;
 
   if (moodPoints >= 15) {
     const string kiss{
-        ""+ name +" : TToday was incredible, Angel. I've never seen art and life blend so seamlessly.\n"
+        ""+ name +" : Today was incredible, Angel. I've never seen art and life blend so seamlessly.\n"
         "Angel: I agree. It's rare to find someone who appreciates the depth of these experiences. You... you've made today special.\n"
         "Narrator: Angel steps closer, their eyes reflecting the museum's soft lighting, showcasing a mix of vulnerability and the usual confidence.\n"
         ""+ name +" : Angel, I feel there's something between us... more than just shared interests. "
