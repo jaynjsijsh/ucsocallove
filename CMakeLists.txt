@@ -8,7 +8,8 @@ src/SlowTyping.cpp
 src/UCSB.cpp
 src/UCR.cpp
 src/UCLA.cpp
-src/UCSD.cpp)
+src/UCSD.cpp
+src/UCI.cpp)
 add_executable(main src/main.cpp ${SOURCE_FILES})
 
 
@@ -17,7 +18,8 @@ set(TEST_FILES tests/UCLAtest.cpp
 tests/UCSDtest.cpp
 tests/SlowTypingTest.cpp
 tests/UCSBTest.cpp
-tests/UCRTest.cpp)
+tests/UCRTest.cpp
+tests/UCITest.cpp)
 add_executable(runAllTest tests ${TEST_FILES} ${SOURCE_FILES})
 target_link_libraries(runAllTest gtest gtest_main)
 
