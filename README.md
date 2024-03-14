@@ -53,10 +53,11 @@
  >   * A new class diagram incorporating your changes after considering the SOLID principles.
  >   * For each update in your class diagram, you must explain in 3-4 sentences:
  >     * What SOLID principle(s) did you apply?
- >     * How did you apply it? i.e. describe the change.
- >     * How did this change help you write better code?
+ > The solid principles are written in our UML diagram, we used Interface Segregation principle so that our classes are not forced to implement methods that they do not do, such as repeating functions or unnecessary functions, as well as Liskov's Substitution Principle where we inherited our UC classes from the character class, as well as Open Closed Principle where we can extend our UC classes without having it affect our parent character class. The Solid principles helped organize our diagram and kept it efficient and effective, we are able to adjust our classes so that they have relevant functions to their class, were able to effectively inherit from another class, and be able to extend from those derived classes without affecting the base class.
+ >     * How did this change help you write better code? 
  > * Perform a new sprint plan like you did in Phase II.
  > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
+
  
 >
  
@@ -69,11 +70,16 @@
  
  ## Screenshots
  > Screenshots of the input/output after running your application
+ ![alt text](image-9.png)
+ ![alt text](image-10.png)
+ ![alt text](image-11.png)
+ ![alt text](image-12.png)
+
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
-![alt text](image-5.png)
+![alt text](image-5.png) 
 ![alt text](image-6.png)
 ![alt text](image-7.png)
 ![alt text](image-8.png)

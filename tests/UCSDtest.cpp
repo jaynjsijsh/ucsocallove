@@ -44,3 +44,20 @@ TEST_F(UCSDTest, DisplayMoodPointsTest) {
     output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "Mood Points: 15\nTris thinks you are a lover!! <3\n");
 }
+TEST_F(UCSDTest, IncreaseMoodPointsTest){
+    ucsd->IncreaseMoodPoints(-15);
+    ASSERT_EQ(ucsd->GetMoodPoints(),-15);
+   
+}
+TEST_F(UCSDTest, GetNameTest){
+    ASSERT_EQ(ucsd->GetName(), "Tris");
+}
+
+TEST_F(UCSDTest, GetLikesTest){
+     EXPECT_EQ(ucsd->GetLikes().back(), "Nature");
+ }
+
+
+TEST_F(UCSDTest, GetDislikesTest){
+     EXPECT_EQ(ucsd->GetDislikes().back(), "Inactivity");
+ }

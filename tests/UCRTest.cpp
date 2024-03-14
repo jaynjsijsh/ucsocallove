@@ -48,17 +48,20 @@ TEST_F(UCRTest, DisplayMoodPointsTest) {
 TEST_F(UCRTest, IncreaseMoodPointsTest){
     ucr->IncreaseMoodPoints(-15);
     ASSERT_EQ(ucr->GetMoodPoints(),-15);
-    //ucr->IncreaseMoodPoints(-20);
-    // ASSERT_EQ(ucr->GetMoodPoints(), -20);
-    // ucr->IncreaseMoodPoints(15);
-    // ASSERT_EQ(ucr->GetMoodPoints(), -5);
+   
 }
 
 TEST_F(UCRTest, GetNameTest){
     ASSERT_EQ(ucr->GetName(), "Scotty");
 }
 
-// TEST_F(UCRTest, GetLikesTest){
-//     EXPECT_EQ(ucr->GetLikes().back, "Nature");
-// }
+TEST_F(UCRTest, GetLikesTest){
+     EXPECT_EQ(ucr->GetLikes().back(), "Nature");
+ }
+
+
+TEST_F(UCRTest, GetDislikesTest){
+     EXPECT_EQ(ucr->GetDislikes().back(), "Inactivity");
+ }
+
 

@@ -44,22 +44,20 @@ TEST_F(UCSBTest, DisplayMoodPointsTest) {
     output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "Mood Points: 15\nSanti thinks you are a lover!! <3\n");
 }
+TEST_F(UCSBTest, IncreaseMoodPointsTest){
+    ucsb->IncreaseMoodPoints(-15);
+    ASSERT_EQ(ucsb->GetMoodPoints(),-15);
+   
+}
+TEST_F(UCSBTest, GetNameTest){
+    ASSERT_EQ(ucsb->GetName(), "Santi");
+}
 
-// // Test the DisplayCoffeeScene method
-// TEST_F(UCRTest, DisplayCoffeeSceneTest) {
-//     // Test for different drink choices
-//     // Scenario: Player chooses an iced latte (option 3)
-//     testing::internal::CaptureStdout();
-//     ucr->DisplayCoffeeScene(3);
-//     std::string output = testing::internal::GetCapturedStdout();
-//     EXPECT_NE(output.find("Scotty: Omgmg I LOVEEEE iced Lattes."), std::string::npos);
-//     EXPECT_EQ(ucr->GetLikes().size(), 3); // Expecting the likes vector to increase
+TEST_F(UCSBTest, GetLikesTest){
+     EXPECT_EQ(ucsb->GetLikes().back(), "Nature");
+ }
 
-//     // Scenario: Player rejects hanging out
-//     ucr->IncreaseMoodPoints(5); // Set mood points to a positive value
-//     testing::internal::CaptureStdout();
-//     ucr->DisplayCoffeeScene(1);
-//     output = testing::internal::GetCapturedStdout();
-//     EXPECT_NE(output.find("Scotty: Oh... okay, I understand. Maybe next time."), std::string::npos);
-//     EXPECT_EQ(ucr->GetMoodPoints(), -5); // Expecting a decrease in mood points
-// }
+
+TEST_F(UCSBTest, GetDislikesTest){
+     EXPECT_EQ(ucsb->GetDislikes().back(), "Inactivity");
+ }
