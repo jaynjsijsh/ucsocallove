@@ -314,11 +314,11 @@ void Game::CoffeeScene() {
           "different pursuits. The menu boasts a diverse selection of drinks, "
           "each one a favorite of the friends you've made so far. What will "
           "you choose\n\n"
-          "1. A bold espresso (Angel's choice)\n"
-          "2. A soothing herbal tea (Peta's choice)\n"
-          "3. A refreshing iced latte (Scotty's choice)\n"
-          "4. A rich hot chocolate (Tris's choice)\n"
-          "5. A vibrant fruit smoothie (Santi's choice)\n"};
+          "1. A bold espresso\n"
+          "2. A soothing herbal tea\n"
+          "3. A refreshing iced latte\n"
+          "4. A rich hot chocolate\n"
+          "5. A vibrant fruit smoothie\n"};
   cout << SlowTyping(coffeeDialogue);
   cin >> drink;
   switch (drink) {
@@ -348,11 +348,11 @@ void Game::CoffeeScene() {
           "various activities unfolding around you. What brings you to the "
           "coffee shop today?\n\n"
 
-          "1. To study for an upcoming exam (Angel's activity)\n"
-          "2. To enjoy a quiet read (Peta's activity)\n"
-          "3. To sketch the scenery (Scotty's activity)\n"
-          "4. To dive into a new video game (Tris's activity)\n"
-          "5. To socialize and meet new people (Santi's activity)\n" };
+          "1. To study for an upcoming exam\n"
+          "2. To enjoy a quiet read\n"
+          "3. To sketch the scenery\n"
+          "4. To dive into a new video game\n"
+          "5. To socialize and meet new people\n" };
   cout << SlowTyping(activityDialogue);
   cin >> activity;
   switch (activity) {
@@ -404,15 +404,14 @@ void Game::BeachScene() {
           "endeavors, you stand where the sand meets the sea, pondering how "
           "best to savor this slice of paradise.\n\n"
           "1. Traverse the shoreline in search of unique seashells, a peaceful "
-          "venture (Tris's choice)\n"
+          "venture\n"
           "2. Immerse in the world of a novel, with the symphony of waves for "
-          "company (Angel's choice)\n"
+          "company\n"
           "3. Bask in the sun's embrace, allowing the tranquility to envelop "
-          "you (Scotty's choice)\n"
-          "4. Craft intricate sandcastles, your imagination the only limit "
-          "(Peta's choice)\n"
+          "you\n"
+          "4. Craft intricate sandcastles, your imagination the only limit \n"
           "5. Dive into a game of beach volleyball, where every serve thrills "
-          "(Santi's choice)\n\n"};
+          "\n\n"};
   cout << SlowTyping(beach);
   cin >> activity;
 

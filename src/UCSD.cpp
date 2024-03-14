@@ -317,7 +317,7 @@ cin >> foodChoice;
         "Tris: Wow, that... that was really sweet. Thank you for today. It "
         "means a lot to me."};
     std::cout << SlowTyping(kiss);
-  } else if (moodPoints <= 7) {
+  } else {
     const string hug{
         "Tris: You know, I wasn't sure what to expect from today, but I'm "
         "really happy we spent it together. It's been... nice, really nice. \n "
@@ -330,16 +330,11 @@ cin >> foodChoice;
         "perfect. Thanks for being here, for making today what it was.\n\n"};
     std::cout << SlowTyping(hug);
   }
-  else {
-    const string reject {
-      
-    };
-  }
+  
+  
 
   const string lastScene{
-      "Narrator: The gesture cements a day of shared experiences and mutual "
-      "affection. As you part ways, you feel a promise in the air, a hint of "
-      "more days like this to come.\n"};
+      "do you feel the love in the air?\n"};
   std::cout << SlowTyping(lastScene);
 }
 

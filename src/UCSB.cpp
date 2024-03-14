@@ -297,18 +297,28 @@ cin >> foodChoice;
 
         "Leaning in, your lips meet in a gentle, lingering kiss that feels like the culmination of the day's shared joy and connection.\n\n"};
     cout << SlowTyping(kiss);
-  } else {
+  } else if (moodPoints >= 7){
     const string hug{
-        "Scotty: You know, I wasn't sure what to expect from today, but I'm "
+        "Santi: You know, I wasn't sure what to expect from today, but I'm "
         "really happy we spent it together. It's been... nice, really nice. \n "
-        "Player: Yeah, I've enjoyed every moment of it. It's been a day full "
+        + playerName + ": Yeah, I've enjoyed every moment of it. It's been a day full "
         "of simple pleasures and great company. \n Narrator: There's a brief "
         "pause as you both stand there, soaking in the moment. Then, almost "
         "instinctively, you extend your arms towards Scotty. \n\nOffer a hug. "
-        "\nPlayer action: You open your arms, and Scotty steps into a warm "
+        "\n You open your arms, and Santi steps into a warm "
         "embrace, a comforting end to the day.\n\nScotty: This hug... it's "
         "perfect. Thanks for being here, for making today what it was.\n\n"};
     cout << SlowTyping(hug);
+  }
+  else {
+    const string rejection {
+      "The vibrant atmosphere of the beach party dims as the night comes to an end. Santi, still buzzing with energy, turns to face you amidst the fading music.\n\n"
+"Santi: Hey, we've had some wild times tonight, huh? You've got a good vibe about you.\n\n "
+"Player: Yeah, it's been amazing. Santi, I was thinking maybe we could...\n\n"
+"Before you can continue, Santi cuts in with a friendly but firm tone.\n\n"
+"Santi: Look, you're awesome to hang out with, really. But I'm all about riding the wave where it takes me, you know? I think sticking to friends is our best bet."
+"Despite the disappointment, Santi's straightforward approach softens the blow, leaving the door open for fun and friendship in the future.\n\n"};
+cout << SlowTyping(rejection);
   }
 
   const string lastScene{
