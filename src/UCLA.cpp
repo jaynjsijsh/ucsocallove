@@ -244,6 +244,7 @@ void UCLA::AngelBigDate() {
       "1. Artisanal Sandwiches with a side of chips\n"
       "2. Seasonal Salad.\n"
       "3.A Gourmet Pizza with a drink of choice.\n"};
+      cout << SlowTyping(food);
 cin >> foodChoice;
   switch (foodChoice) {
   case 1: {

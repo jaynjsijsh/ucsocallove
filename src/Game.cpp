@@ -16,32 +16,8 @@ using namespace std;
 // string name;
 string name;
 
-string playerName = name;
+string playerName;
 
-int ucrmood = 0;
-vector<string> UCRLikes = {};
-vector<string> UCRDislikes = {};
-UCR Scotty("Scotty", ucrmood, UCRLikes, UCRDislikes, playerName);
-
-int ucsbmood = 0;
-vector<string> UCSBLikes = {};
-vector<string> UCSBDislikes = {};
-UCSB Santi("Santi", ucsbmood, UCSBLikes, UCSBDislikes, playerName);
-
-int uclamood = 0;
-vector<string> UCLALikes = {};
-vector<string> UCLADislikes = {};
-UCLA Angel("Angel", uclamood, UCLALikes, UCLADislikes, playerName);
-
-int ucimood = 0;
-vector<string> UCILikes = {};
-vector<string> UCIDislikes = {};
-UCI Peta("Peta", ucimood, UCILikes, UCIDislikes, playerName);
-
-int ucsdmood = 0;
-vector<string> UCSDLikes = {};
-vector<string> UCSDDislikes = {};
-UCSD Tris("Tris", ucsdmood, UCSDLikes, UCSDDislikes, playerName);
 // constructor
 Game::Game(){};
 
@@ -100,6 +76,7 @@ void Game::StartGame() {
 
   getline(cin, name); // Use getline to read the entire line, including spaces.
   // this->name = name;
+  playerName = name;
   const string introDialogue2 { "\nNarrator: Wonderful to meet you, " + name
        + ". It's always a pleasure to guide a new face through the twists and "
           "turns of university life.\n"
@@ -109,6 +86,34 @@ void Game::StartGame() {
   cout << SlowTyping(introDialogue2);
   return;
 }
+
+// initialize objects after
+int ucrmood = 0;
+vector<string> UCRLikes = {};
+vector<string> UCRDislikes = {};
+UCR Scotty("Scotty", ucrmood, UCRLikes, UCRDislikes, playerName);
+
+int ucsbmood = 0;
+vector<string> UCSBLikes = {};
+vector<string> UCSBDislikes = {};
+UCSB Santi("Santi", ucsbmood, UCSBLikes, UCSBDislikes, playerName);
+
+int uclamood = 0;
+vector<string> UCLALikes = {};
+vector<string> UCLADislikes = {};
+UCLA Angel("Angel", uclamood, UCLALikes, UCLADislikes, playerName);
+
+int ucimood = 0;
+vector<string> UCILikes = {};
+vector<string> UCIDislikes = {};
+UCI Peta("Peta", ucimood, UCILikes, UCIDislikes, playerName);
+
+int ucsdmood = 0;
+vector<string> UCSDLikes = {};
+vector<string> UCSDDislikes = {};
+UCSD Tris("Tris", ucsdmood, UCSDLikes, UCSDDislikes, playerName);
+
+
 void Game::PromptSubMenu() {
   int dispSub;
 
@@ -231,7 +236,7 @@ void Game::DisplayOrientation() {
               "share with us(enter a one word verb).\n\n"};
   cout << SlowTyping(orientation);
   cout << "Verb: ";
-  cin.ignore();
+  //cin.ignore();
   getline(cin, activity);
   cout << endl << endl;
 
